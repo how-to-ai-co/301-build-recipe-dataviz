@@ -4,136 +4,142 @@ Build a live dashboard and tell a story with your data.
 
 Copy this whole recipe into Claude Code. Keep this page open while you work.
 
-By the end you will have four things built from your own data: a database Claude can query in plain English, a live dashboard at your own Vercel URL, an animated data story people will remember, and an analyst agent that checks your numbers every day (or as often as you like) and sends you what changed in Slack or email.
+By the end you can have up to three things built from your own data: a dashboard at your own Vercel link, an animated data story people will remember, and an analyst agent that checks your numbers on a schedule and sends you what changed in Slack or email. Along the way, Claude becomes an analyst you can ask anything about your data.
 
 ## The job
 
-Act as my analyst on staff. Help me get my data into a database, study it, decide which dashboard and story fit it best, build both, publish them, and then set up an analyst agent that checks the data on a schedule and sends me what changed.
+Act as my analyst on staff. Ask me everything you need up front, get my data ready, study it, decide which dashboard and story fit it best, build what I chose, publish it, and set up the analyst agent if I want one.
 
-Use the playbook, sample data and reference animation at https://github.com/how-to-ai-co/301-build-recipe-dataviz. Clone it into a scratch folder and read `AGENTS.md`, `playbook/analyst-playbook.md`, `playbook/story-playbook.md` and `playbook/analyst-agent.md` before you start building. Open `examples/sample-story/index.html` in the browser so you know the quality bar for the story. It runs on made-up sample data; never copy its numbers into my story.
+Use the playbooks, scripts, sample data and reference story at https://github.com/how-to-ai-co/301-build-recipe-dataviz. Clone it into a scratch folder and read `AGENTS.md` and the playbooks it lists before you start building. Open `examples/sample-story/index.html` in the browser so you know the quality bar for the story. It runs on made-up sample data; never copy its numbers into my story. If the clone fails, stop and tell me. Never recreate the playbooks or scripts from memory.
 
 ## Work with me
 
-- Run commands, edit files and check results yourself. Give short progress updates and show me the browser as things change.
-- Ask one question at a time. Use clickable options if you have them, otherwise lettered choices. Reuse answers I already gave.
-- Only stop for account screens I have to click through myself, decisions only I can make, or anything that costs money.
+- Run commands, edit files and check results yourself. Show me the browser as things change.
+- Ask all your questions in Step 1, using clickable options if you have them, otherwise lettered choices. After that, only stop for account screens I have to click through myself, approvals, or anything that costs money.
+- Taking time to analyze well is fine. Working in silence is not. While you work, tell me what you are finding in one short line at a time.
 - Never ask me to paste passwords, API keys or database connection strings into chat. Never print them, commit them or put them in browser code. Tell me exactly where to paste each secret privately (an `.env.local` file you create for me, or the Vercel environment-variables screen).
 - Use plain language. I may not know what a schema, a view or an environment variable is. Explain each one in a sentence the first time it comes up.
 
-## Step 1: check my setup
+## Step 1: ask me everything up front
 
-I finished the AI 201 live workshop, so these should already work. Check them quietly and only stop me for what is missing:
+Ask these together, in one or two screens, so the rest of the build can run without stopping. Skip any question my earlier answers make unnecessary.
 
-1. `git`, Node.js 22+ and `npm`.
-2. I am signed in to GitHub, and you can push to a new repository in my account.
+1. **What do you want built?** (choose any) Dashboard / Animated story / Analyst agent that sends me updates.
+2. **Where does your data live today?**
+   - A. A spreadsheet or CSV file (Excel, Google Sheets, an export)
+   - B. Already in Supabase
+   - C. Another database (for example Neon, which is what Vercel's Postgres uses, or MySQL)
+   - D. Inside a business tool (Stripe, Shopify, HubSpot, Square, Google Analytics and so on)
+   - E. I will paste it in right here
+   - F. I don't have data handy. Use sample data
+3. **If A, D, E or F: keep it on your computer, or put it in a database?**
+   - Keep it on my computer (fastest). Claude queries the files directly. I refresh it by adding a new export.
+   - Put it in a database. A few more minutes now; then the dashboard reads live data and the agent can run while my laptop is off. Use Neon, created from my Vercel project, unless I already use Supabase.
+4. **Who should see the dashboard?**
+   - Just me and my team. It gets a password and can show names and details.
+   - Anyone with the link. Totals and groups only, no personal details.
+5. **If you want the agent:** how often (every morning / every Monday / once a month / something else), where (Slack / email / both), and who gets it (just me / other people too). If other people, have me type their email addresses or name the Slack channel.
+6. **Optional:** your website, if you want the dashboard in your brand colors.
+
+Save the answers (no secrets) to `.analyst/setup.json` in the project and add `.analyst/` to `.gitignore`.
+
+## Step 2: check my setup and do every sign-in now
+
+Check these quietly and stop me only for what is missing, so all the account screens happen now and not halfway through:
+
+1. `git`, Node.js 22+ and `npm`. Clone the workshop repo.
+2. I am signed in to GitHub (`gh auth status`), and you can create a repository in my account.
 3. The Vercel CLI is installed and signed in (`vercel whoami`). If it is missing, install it with `npm i -g vercel` and walk me through `vercel login`.
-4. The Supabase MCP server is connected to this session, so you can list my projects. If it is not, walk me through adding it (see `playbook/connect-supabase.md`) and restarting the session.
-5. If I have no Supabase account yet, do not send me to sign up. Have me create the database from inside Vercel instead (my project's Storage tab, then Supabase), which uses my Vercel login and puts the keys in my Vercel project for me.
+4. Create my project folder, a new GitHub repository and a new Vercel project linked to it, with a placeholder page deployed, so every later push goes live on its own. Check that Vercel's GitHub app can see the repository; if `vercel git connect` fails, send me to the GitHub screen that gives Vercel access to it.
+5. **Only if I chose a database:** add Neon to my Vercel project (the project's Storage tab, or `vercel integration add neon`; I accept Neon's terms myself), then run `vercel env pull .env.local` so the connection string arrives without anyone pasting it.
+6. **Only if my data is in Supabase:** check the Supabase MCP server is connected (see `playbook/connect-supabase.md`).
+7. **Only if I want the agent:** check the Slack or Gmail connector is on, following `playbook/connect-slack-gmail.md`, and send me one test message to confirm it works.
 
 Report what passed in one short list, then move on.
 
-## Step 2: find my data
+## Step 3: get my data ready
 
-This is the hardest part, so take it slowly. Ask:
+Follow the matching path in `playbook/get-your-data-in.md`. In short:
 
-**1. Where does the data you want to analyze live today? Choose one.**
+- **Kept on my computer (A, D, E, F):** put the CSV files in `data/` (never pushed to GitHub). Tidy them: one header row, no total rows, one date format, money without symbols. There is nothing to load: `scripts/query.mjs` runs SQL straight against the files.
+- **Put in Neon:** create the tables (decide what one row means and pick sensible column types), load them with `scripts/load-csv.mjs`, and check the row counts.
+- **Already in Supabase or another database (B, C):** read it where it is, read-only. Do not copy it anywhere. Confirm with me which tables matter. Never open tables that look like secrets, tokens or logs.
+- **A business tool (D):** use its connector if one is available to you, otherwise walk me through its CSV export screen. No custom API code.
+- **Sample data (F):** ask which business is closest to mine (coffee shop, course launch, agency pipeline) and copy it from `sample-data/`. Label it **Sample data** everywhere.
 
-- A. A spreadsheet or CSV file (Excel, Google Sheets, an export)
-- B. Already in Supabase
-- C. Another database (for example Neon, which is what Vercel's Postgres uses, or MySQL)
-- D. Inside a business tool (Stripe, Shopify, HubSpot, Square, Google Analytics and so on)
-- E. I will paste it in right here
-- F. I don't have data handy. Use sample data
+If there are several sources (for example ad spend and sales), do not make me pick one table. Offer the questions they could answer, including ones that combine sources ("Are my ads driving sales?"), with a plain time estimate for each.
 
-Then follow the matching path in `playbook/get-your-data-in.md`. In short:
+Check the data is ready to analyze: one row per thing and real columns. If it is not (raw report lines, headers buried in the data, one big text column), tell me in a sentence, give me a time estimate, and build the smallest clean version: one table or view with only the columns we need.
 
-- **A:** ask me for the file path or to drop the file in the project folder. For Google Sheets, have me use File > Download > CSV.
-- **B:** list my Supabase projects and tables through MCP and confirm which tables matter.
-- **C:** default to copying a one-time snapshot into a new Supabase project so this workshop uses a single tool. Explain that live syncing from the other database is possible later. Help me export the tables, without asking me to paste the connection string into chat.
-- **D:** first check whether a connector for that tool is already available to you. If it is, use it to pull the records. If not, walk me through the tool's own CSV export screen. Do not write a custom API integration during the workshop.
-- **E:** accept pasted tables or CSV text. Save it to a `.csv` file before loading so nothing is lost.
-- **F:** ask which sample business is closest to mine: a coffee shop's sales, an online course launch, or an agency's sales pipeline. Load it from `sample-data/`. Label it **Sample data** everywhere it appears.
-
-Ask whether the data includes personal information such as names, emails or phone numbers. If it does, keep it in the database but never show it on the public dashboard or story.
-
-## Step 3: load it into Supabase
-
-1. Use an existing Supabase project I choose, or create a new free one named after my project. Never use the instructor's project.
-2. Look at the data before designing tables. Decide what one row means in each table, pick sensible column types (dates as timestamps, money as numbers, IDs as text) and create the tables with a migration through MCP.
-3. Load the rows with `scripts/load-csv.mjs` from the workshop repo. It reads the project URL and secret key from `.env.local`, which you create and I fill in from the Supabase dashboard (Project Settings > API Keys). Supabase's Table Editor CSV import is a fine fallback for small files.
-4. Turn on row level security for every table, with no public read policies. The dashboard will read through the server, not from the browser.
-5. Check that row counts in the database match the source file, and show me three sample rows.
+Finish with row counts that match the source and three sample rows.
 
 ## Step 4: let me talk to my data
 
-Before you build anything, show me that Claude can answer questions about my data. Ask three plain-English questions on my behalf through the Supabase MCP, such as "what were the best and worst weeks?" or "which customers came back?", and show the answer with the query you ran. Explain that from now on I can ask Claude anything about this data directly, and that this is what "an analyst on staff" means.
+Show me that Claude can answer questions about my data. Ask two plain-English questions on my behalf, then ask me for one of my own. Give each answer first, then a one-line "how I got this" with the query below it. Explain that from now on I can ask Claude anything about this data in this project folder, and that this is what "an analyst on staff" means. Keep these answers; Step 5 reuses them.
 
-Keep MCP work read-only from here on unless I ask for a change.
+From here on, work read-only unless I ask for a change.
 
 ## Step 5: study the data and choose the dashboard
 
-This is the part that makes the dashboard good. Follow `playbook/analyst-playbook.md`:
+This is the part that makes everything good. Take the time it needs and narrate what you find as you go. Follow `playbook/analyst-playbook.md`:
 
-1. **Profile every table:** row counts, date range, what one row means, measures, categories, IDs, missing values, duplicates and anything that looks like test data.
-2. **Name the data type:** transactions, funnel, pipeline, events, subscriptions, inventory, survey, marketing or something else. Combinations are common.
-3. **Write the questions** an owner of this data would ask every week.
-4. **Propose one recommended dashboard** with a headline number, 3 to 5 KPI cards, 3 to 5 charts each tied to a question, the filters that matter, and one table for drilling into the detail. Give one short alternative if the data supports a clearly different view.
-5. Ask me one question: **Build the recommended dashboard / Build the alternative / Change something first.**
+1. **Profile every table** with one query per table: row counts, date range, what one row means, measures, categories, IDs, missing values, duplicates, personal details and anything that looks like test data.
+2. **Name the data type:** transactions, funnel, pipeline, events, subscriptions, inventory, survey, marketing or a combination.
+3. **Write the questions** an owner of this data would ask every week. Start with the Step 4 questions.
+4. **Find the insights:** the biggest change, concentration, the peak, the drop-off, the outlier. These become the headline, the chart titles and the story.
+5. **Propose one dashboard:** a headline number, 3 to 5 KPI cards, 3 to 5 charts each tied to a question with a title that states the answer, the filters that matter, one detail table, and what the data cannot answer. Give one short alternative only if the data clearly supports a different view.
+6. Ask me one question: **Build it / Build the alternative / Change something first.**
 
-Every number must come from a query. Never invent, round up or estimate a number for display. If the question I care about cannot be answered with this data, say what is missing.
+Every number must come from a query. Never invent, round up or estimate a number for display. Save each query that feeds a card or chart as its own file in `queries/` in my project.
 
-## Step 6: build the dashboard
+## Step 6: build what I chose, in parallel
 
-1. Create a new Next.js app in a new folder with TypeScript and Tailwind. Use a chart library you know well (Recharts is a good default).
-2. Read data only on the server, with the Supabase secret key held in an environment variable. Create database views or functions for each KPI and chart so the queries live in one place. Send only the totals and groupings the page needs to the browser, never raw personal data.
-3. Build KPI cards, charts and filters (date range plus the one or two categories that matter). Filters must update every card and chart together.
-4. Follow the chart rules in the playbook: lines for trends, sorted bars for comparisons, histograms for spread, funnels for steps, no pie charts with more than four slices, readable labels, works on a phone.
-5. Show the date range and "last updated" time. If this is sample data, show a **Sample data** badge.
-6. Run it locally, check desktop and phone widths, and fix anything that looks broken before showing me.
+The dashboard, the story and the agent brief all read from `queries/`, so they do not depend on each other. If you can run helper agents or parallel sessions, build them at the same time; otherwise build the dashboard first. Tell me what each one is doing.
 
-## Step 7: put it on the web
+**The dashboard**
 
-1. Create a new GitHub repository in my account and push the code. Do not commit `.env.local`.
-2. Create a new Vercel project from that repository. Never reuse the instructor's project.
-3. Add the Supabase URL and secret key to the Vercel project's environment variables. Walk me through the screen if the CLI cannot do it.
-4. Deploy, open the real URL, and confirm the numbers match the local version.
-5. Before calling it shareable, remind me that anyone with the link can see the dashboard. Confirm with me that the totals shown are fine to share. If they are not, offer Vercel's deployment protection or a sample-data version for sharing.
+1. Next.js with TypeScript and Tailwind. Design it freely to fit this data. Follow the chart rules in the playbook: lines for trends, sorted bars for comparisons, histograms for spread, funnels for steps, no pie charts with more than four slices, readable labels, works on a phone.
+2. Data stays on the server. With a database, the server runs the `queries/` files over the connection string. With local files, run the queries with `scripts/query.mjs --json` and save only the results (totals and groups) for the site; the raw CSVs never leave my computer. Add an `npm run refresh` that redoes this.
+3. Filters (date range plus the one or two categories that matter) update every card and chart together.
+4. **If the dashboard is private:** add a simple password page. The password is a Vercel environment variable I set, never in the code, and it is checked on the server before any data is sent to the browser. Private dashboards can show names and details. **If it is public:** totals and groups only.
+5. Show the date range and "last updated" time, and a **Sample data** badge if it applies. Use my brand colors if I gave you my website.
+6. Run it locally and check desktop and phone widths before showing me.
 
-Show me the live URL. This is the first milestone.
+**The story** (if I chose it). Follow `playbook/story-playbook.md`. Run wild with animation and sound, at the highest fidelity you can, with a visual idea that fits this data and this headline. The sample story is the quality bar to beat, not a template. Keep these: beats built from the Step 5 insights, every number computed from the data, a **Play** button, sound off until I click, a "what this does not prove yet" ending, a calm version for people who turn off motion, works on a phone, and no personal details. It lives at `/story` on the same site and stays public even when the dashboard is private.
 
-## Step 8: tell the story with a Claude animation
+**The agent brief** (if I chose the agent). Write `analyst/AGENT.md` following `playbook/analyst-agent.md`. It points at the `queries/` files instead of copying them.
 
-Follow `playbook/story-playbook.md` and use `examples/sample-story/index.html` as the reference for quality and technique.
+## Step 7: put it live
 
-1. From the analysis, pick the **one headline** and 4 to 6 story beats that build to it. Write them as a short outline, show me, and continue unless I object.
-2. Build it as a `/story` page on the same site. The default style is a scroll-driven film: one dot or mark per record (or per meaningful group when there are too many records) that re-forms into a new chart for each beat, with the sentence for that beat beside it.
-3. Every sentence and number in the story is computed from the data at build or request time, not typed in, so the story stays true when the data changes.
-4. Include a **Play** button that scrolls the story automatically, a "what this does not prove yet" section at the end, and a calm version for people who turn off motion in their device settings.
-5. Make it work on a phone. Deploy it and show me the live `/story` URL.
+1. Push to GitHub (never `.env.local`, `data/` or `.analyst/`). The Vercel project from Step 2 deploys it.
+2. If the dashboard reads a database, check the connection string is in the Vercel project's environment variables (Neon puts it there for you; for Supabase, walk me through pasting it into the Vercel screen). If it is private, have me set the password there too.
+3. Open the real URL and confirm the numbers match the local version. If it is private, confirm the password page works and nothing loads before it.
+4. If I kept my data on my computer, tell me plainly how to update it: add the new export to `data/`, then ask you to refresh and push.
 
-## Step 9: set up my analyst agent
+Show me the live dashboard and `/story` URLs.
 
-This closes the loop. The dashboard shows my numbers when I open it; the agent checks them on a schedule and sends me what changed. If I want to ask a question about my data, I just ask Claude in a chat, so the agent's only job is the insight delivery. Follow `playbook/analyst-agent.md`. Use features and connectors my Claude account already has. Do not build a custom bot, server or email service.
+## Step 8: start my analyst agent
 
-1. **Pick the cadence.** Ask: **Every morning / Every Monday / Once a month / Something else.** Default to every morning.
-2. **Pick where it reports.** Ask: **Slack / Email / Both.** Check that a Slack or Gmail connector is available. If it is not, tell me where to turn it on and wait. For Slack, ask whether it posts to a channel or sends to me directly. For email, it sends to me only, or saves a draft if sending is not available.
-3. **Write its brief.** Create `analyst/AGENT.md` in my project and push it to GitHub. It holds what the agent watches (the headline number and the KPI cards from my dashboard, with the exact queries), what counts as worth telling me (for example, a move of more than 10% against the previous period, a new high or low, a missing day of data), the message format, where it sends, and the links to my dashboard and story. No secrets in it. Show me the brief in plain words and let me change anything.
-4. **Run it once with me.** Follow the brief now: run the queries, compare with the previous period, write the message (the headline, up to three changes with their numbers, one thing to watch, and both links). Show me the draft and send it only after I approve.
-5. **Put it on the schedule.** Set it up with the scheduled-task feature my Claude plan offers (check what is available, such as routines in Claude Code or scheduled tasks in the Claude app, and do not invent screens). The scheduled task reads `analyst/AGENT.md`, queries Supabase read-only and sends with the Slack or Gmail connector. Trigger one run right away and confirm the message arrived before calling it done.
-6. **Keep the data fresh.** Say plainly how new data reaches Supabase. If my source is a connected tool, the agent can pull the latest records into Supabase before it analyzes, if I approve that write. If my source is a spreadsheet or a paste, tell me how to add the next export and make the agent say "No new data since [date]" instead of repeating old news. Sample data never changes, so for sample data the message says it is sample data.
+Skip this step if I did not choose the agent. Follow `playbook/analyst-agent.md`:
 
-If my plan has no scheduled tasks, give me a one-line prompt I can paste into Claude at my chosen cadence instead (for example "Run my analyst brief in analyst/AGENT.md and send me the update"), and mark the schedule as waiting.
+1. Show me the brief in plain words and let me change anything: what it watches, what counts as news, the message format, the recipients from Step 1.
+2. **Run it once with me.** Run the queries, compare with the previous period and write the message. Show me the draft and send it only after I approve. Explain what each kind of future message means, including "No new data since [date]", and tell me that from now on it sends on its own.
+3. **Put it on the schedule** with the scheduled-task feature my Claude plan offers (check what is available and follow the real screens, not memory). If my data is on my computer, it runs on my computer, which has to be on at that time. Offer once: "Want it to run while your laptop is off? Let's put your data in Neon."
+4. Trigger one scheduled run right away and confirm the message arrived before calling it done.
+
+If my plan has no scheduled tasks, give me a one-line prompt I can paste into Claude at my chosen cadence instead, and mark the schedule as waiting.
 
 ## Finish with a handoff
 
 End with:
 
-- The dashboard URL, the story URL, the GitHub repository and the local project folder.
-- Where the data lives (Supabase project name and tables) and how many rows were loaded.
+- The dashboard URL (and whether it has a password), the story URL, the GitHub repository and the local project folder.
+- Where the data lives and how many rows there are, and how to refresh it.
 - Which numbers come from sample data, if any.
-- The analyst agent: where it reports, how often, when it runs next, and whether the test run arrived.
+- The analyst agent: who it sends to, how often, when it runs next, and whether the test run arrived.
+- If my data is on my computer: one line on moving it to a database later.
 - Three questions I could ask my data next.
 
-Save these non-secret choices to `.analyst/setup.json` in the project (and add `.analyst/` to `.gitignore`), then give me this resume prompt:
+Update `.analyst/setup.json` with what was built, then give me this resume prompt:
 
-> Resume my AI 301 data story from `.analyst/setup.json`. Check what is working, keep it, and continue from the next unfinished step. Do not repeat the interview or rebuild what already works.
+> Resume my AI 301 data story from `.analyst/setup.json`. Check what is working, keep it, and continue from the next unfinished step. Do not repeat the questions or rebuild what already works.

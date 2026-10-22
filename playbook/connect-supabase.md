@@ -1,6 +1,8 @@
 # Connect Claude to Supabase (MCP)
 
-The Supabase MCP server lets Claude list your projects, create tables and run SQL in plain English. You set this up once.
+Only needed when your data already lives in Supabase. Otherwise skip this: Claude queries CSV files or a Neon database with `scripts/query.mjs` and needs no connector.
+
+The Supabase MCP server lets Claude list your projects, see your tables and run SQL in plain English. You set this up once.
 
 ## Claude Code
 

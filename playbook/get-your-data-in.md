@@ -1,44 +1,76 @@
-# Getting your data in
+# Getting your data ready
 
-The goal for the workshop: one Supabase project holding the tables you want to analyze, so Claude can query them through the Supabase MCP and the dashboard can read them from the server. Pick the path that matches where your data lives.
+The goal: data Claude can query with SQL, in as few steps as possible. A database is not required. Claude can run SQL straight against CSV files on your computer with `scripts/query.mjs`. A database is worth it when you want the dashboard to read live data or the analyst agent to run while your laptop is off.
 
 Never paste passwords, API keys or database connection strings into chat. Claude will tell you where to paste them privately.
 
-## A. A spreadsheet or CSV
+## Two ways to hold the data
 
-1. Export each sheet as CSV (Google Sheets: File > Download > Comma-separated values; Excel: File > Save As > CSV).
-2. Put the files in a `data/` folder inside your project. Claude adds `data/` to `.gitignore` so your raw files are never pushed to GitHub.
-3. Claude reads the first rows, designs a table per file and creates it through the Supabase MCP.
-4. Claude loads the rows with `scripts/load-csv.mjs` (below). For small files, Supabase's Table Editor > Import data from CSV works too.
+| | On your computer | In a database |
+| --- | --- | --- |
+| Setup | None | A few minutes |
+| Asking Claude questions | Yes, in this project folder | Yes, anywhere a connector reaches it |
+| Dashboard | Built from saved totals; refresh by adding a new export and pushing | Reads live |
+| Analyst agent | Runs on your computer, which must be on | Can run in the cloud |
+| Raw data on GitHub | Never (only totals are pushed) | Never |
 
-Tidy-up Claude should do first: one header row, no merged cells, no total rows at the bottom, dates in one format, money without currency symbols.
+Claude asks which you want in Step 1. You can move to a database later.
 
-## B. Already in Supabase
+## Kept on your computer (spreadsheet, export, paste or sample data)
 
-Claude lists your projects and tables through MCP, and you confirm which tables matter. Nothing needs to move. If the tables hold sensitive data, Claude creates views with only the columns the dashboard needs.
+1. Put each table in `data/` as a CSV: `data/orders.csv`, `data/customers.csv`. Claude adds `data/` to `.gitignore` so raw files never reach GitHub.
+   - Google Sheets: File > Download > Comma-separated values. Excel: File > Save As > CSV.
+   - Pasted tables: Claude saves them to `data/pasted.csv` first and shows you the rows it understood.
+2. Tidy up first: one header row, no merged cells, no total rows at the bottom, dates in one format, money without currency symbols.
+3. Query them. Each file becomes a table named after the file:
 
-## C. Another database (Neon / Vercel Postgres, MySQL, others)
+```bash
+npm i @duckdb/node-api postgres
+node scripts/query.mjs "select store, count(*) as orders from orders group by store"
+```
 
-Default for the workshop: copy a snapshot into a new Supabase project. One tool to learn, one MCP connection, and your production database is never touched.
+There is no loading step.
 
-1. Export the tables you need to CSV. For Neon, use the Neon console's SQL editor to run the query and download the result, or have Claude run `psql` with the connection string stored in `.env.local` (you paste it there yourself, never in chat).
-2. Continue with path A.
+## In a database
 
-Live sync from the other database can come later. Mention it in the handoff as a next step.
+### Neon (the default)
 
-## D. A business tool (Stripe, Shopify, HubSpot, Square, Google Analytics…)
+Neon is plain Postgres, created from your Vercel project, so there is no new account and no key to copy.
+
+1. In your Vercel project, open **Storage**, choose **Neon**, and create a free database. Or Claude runs `vercel integration add neon` and you accept Neon's terms yourself.
+2. Claude runs `vercel env pull .env.local`. The connection string (`DATABASE_URL`) arrives in `.env.local` and is already set in Vercel for the live site.
+3. Claude creates the tables. It decides what one row means, then picks sensible column types (dates as timestamps, money as numbers, IDs as text).
+4. Claude loads each CSV, then checks that the row counts match:
+
+```bash
+node scripts/load-csv.mjs data/orders.csv orders
+```
+
+The loader adds all rows or none. Neon has no public API unless you turn one on, so there is no access-rule step.
+
+### Supabase (if you already use it)
+
+Use it the same way. Your Supabase connection string (Project Settings > Database > Connection string, the pooled one) goes in `.env.local` as `DATABASE_URL`, pasted by you, not in chat. Turn on row level security for every table, with no public read policies, because Supabase tables are reachable through its public API otherwise.
+
+## Already in a database
+
+- **Supabase:** Claude lists your projects and tables through the Supabase MCP (`playbook/connect-supabase.md`) and you confirm which tables matter. Nothing moves.
+- **Neon, Vercel Postgres or another Postgres:** you paste the connection string into `.env.local` yourself; `scripts/query.mjs` reads it, read-only. Neon also has its own MCP server if you prefer that.
+- **MySQL or anything else:** export the tables you need to CSV and keep them on your computer, or ask Claude to copy them into Neon.
+
+Never copy a database you already have into a new one just for this workshop. Never open tables that look like secrets, tokens, sessions or logs.
+
+## A business tool (Stripe, Shopify, HubSpot, Square, Google Analytics…)
 
 1. Claude checks whether a connector for that tool is already available in this session. If it is, Claude uses it to pull the records you need and saves them to CSV.
 2. If not, use the tool's own export screen to download a CSV of the records (orders, payments, contacts, deals). Claude tells you where that screen is.
-3. Continue with path A.
+3. Continue as "kept on your computer", or load it into Neon.
+
+Data from a tool keeps changing, so this is a good case for a database: the agent can pull new records on schedule, with your approval.
 
 No custom API integrations during the workshop. They are a good follow-up project.
 
-## E. Paste it in
-
-Paste a table or CSV text straight into the chat. Claude saves it to `data/pasted.csv` first, shows you the rows it understood, then continues with path A. Best for up to a few hundred rows.
-
-## F. No data yet: use sample data
+## No data yet: sample data
 
 Three fictional businesses ship in `sample-data/`. Pick the one closest to yours:
 
@@ -48,18 +80,19 @@ Three fictional businesses ship in `sample-data/`. Pick the one closest to yours
 | `course-launch` | Brightpath Academy launch week | `signups`, `courses`, `course_completions` | Funnel + events (the data behind the sample story) |
 | `agency-pipeline` | Northline Studio, 12 months of deals | `deals` | Pipeline |
 
-Each folder has a `schema.sql` (create the tables) and CSVs (the rows). Everything sample-based must show a **Sample data** badge.
+Copy the CSVs into `data/`. Each folder also has a `schema.sql` for loading into a database. Everything sample-based shows a **Sample data** badge.
 
-## The loader script
+## Several sources
 
-`scripts/load-csv.mjs` inserts a CSV into an existing table in batches.
+If you have more than one source (ads and sales, sign-ups and payments), Claude does not make you pick one table. It offers the questions the data can answer, including ones that join sources ("Are my ads driving sales?"), with a time estimate for each.
 
-```bash
-# .env.local in the project folder (you fill in the values from Supabase > Project Settings > API Keys)
-SUPABASE_URL=https://YOUR-PROJECT.supabase.co
-SUPABASE_SECRET_KEY=...
+## Data that is not ready to analyze
 
-node scripts/load-csv.mjs data/orders.csv orders
-```
+Some data arrives as raw report lines, with column names in a header row inside the data, or as one big text column. Claude says so in a sentence, gives a time estimate, and builds the smallest clean version: one table or view with one row per thing and only the columns the dashboard needs.
 
-It uses the secret key because it writes to the database. That key stays in `.env.local` (ignored by Git) and in Vercel's environment variables, never in browser code.
+## The scripts
+
+Both read `DATABASE_URL` (or `POSTGRES_URL`) from `.env.local` and never print it. Copy them into your project's `scripts/` folder and run `npm i @duckdb/node-api postgres`.
+
+- `scripts/query.mjs "select …"` or `--file queries/x.sql [--json]`: runs SQL read-only against the database, or against `data/*.csv` with DuckDB when there is no database. The same SQL works for both.
+- `scripts/load-csv.mjs <file.csv> <table>`: loads a CSV into an existing Postgres table (Neon or Supabase) in one transaction.

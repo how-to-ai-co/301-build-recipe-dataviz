@@ -1,12 +1,14 @@
 # Analyst playbook: from raw tables to the right dashboard
 
-This is how Claude decides what to build. The goal is not "a dashboard with charts." The goal is the few numbers and pictures that answer the questions the owner of this data asks every week. Work through the five stages in order and keep notes in `.analyst/profile.md` so the student can see the reasoning.
+This is how Claude decides what to build. The goal is not "a dashboard with charts." The goal is the few numbers and pictures that answer the questions the owner of this data asks every week. Work through the five stages and keep notes in `.analyst/profile.md` so the student can see the reasoning. Run Stage 5 (insights) before you propose the dashboard in Stage 4: the insights set the headline and the chart titles.
+
+Taking time is fine; working in silence is not. Each time you learn something, tell the student in one plain line ("A year of sales; three countries bring 80% of revenue." "No customer names, only anonymous IDs.").
 
 ---
 
 ## Stage 1: profile the data
 
-Run these checks with SQL through the Supabase MCP. Read-only.
+Run these checks with SQL, read-only: `scripts/query.mjs`, or the Supabase MCP if the data is in Supabase. Use **one query per table** that returns all the checks at once (counts, min/max dates, null counts per column, distinct counts per column), not one query per check. Every trip to the database is waiting time.
 
 For each table:
 
@@ -22,6 +24,7 @@ For each table:
 | Money | Currency, and whether it is in cents. Refunds or negative values. |
 | Location | Real geography (country, state, city, postcode). Only then is a map worth it. |
 | Free text | Comments, notes, reviews. Candidates for a theme summary, not a chart. |
+| Personal details | Names, emails, phone numbers, addresses. Fine on a private dashboard; never on a public one or in the story. Tell the student what you found. |
 | Quality | Nulls per column, duplicate rows, future dates, obvious test accounts (emails with "test", huge outliers), timezone. |
 
 **Time bucket rule:** pick the bucket that gives 20 to 90 points across the range. Hours for one day, days for a few weeks, weeks for a few months, months for a year or more.
@@ -51,7 +54,7 @@ If the data is a combination (for example sign-ups plus course completions), pic
 
 ## Stage 3: write the owner's questions
 
-Write 5 to 8 questions in the owner's words, ranked by how often they would ask them. Then, for each one, write the query that answers it and run it. Drop any question the data cannot answer and list it under "what's missing".
+Write 5 to 8 questions in the owner's words, ranked by how often they would ask them. Start with the questions already answered in Step 4 and reuse those answers. For the rest, write the query that answers it and run it. Drop any question the data cannot answer and list it under "what's missing".
 
 Good questions are specific: "Which store had the biggest drop last month?" beats "Store performance".
 
@@ -66,7 +69,7 @@ Good questions are specific: "Which store had the biggest drop last month?" beat
 3. **Headline card:** the one number from Stage 2, large, with change vs the previous equal period and a small sparkline.
 4. **3 to 5 KPI cards:** each answers one question. Format: label, value, change, one-line meaning.
 5. **3 to 5 charts:** each with a title that is the answer, not the topic. "Weekends bring 41% of revenue" beats "Revenue by day".
-6. **Detail table:** sortable, the 50 most relevant rows, no personal data on a public site.
+6. **Detail table:** sortable, the 50 most relevant rows. On a private dashboard it can name the customer, deal or account; on a public one it shows groups only.
 
 ### Pick charts by the question
 
@@ -83,7 +86,7 @@ Good questions are specific: "Which store had the biggest drop last month?" beat
 
 ### Number rules
 
-- Every number comes from a query against the database. Nothing typed in by hand.
+- Every number comes from a query against the data. Nothing typed in by hand. Save each card's and chart's query as its own file in `queries/` (`queries/revenue_by_week.sql`). The dashboard and the analyst agent both run these files, so their numbers always match.
 - Show the denominator next to rates: "89% (1,229 of 1,379)".
 - Compare to the previous equal period, not to a hand-picked date.
 - Use the same rounding everywhere. Use thousands separators.
@@ -112,7 +115,7 @@ Show the student the plan as a short list: headline, cards, charts (each with th
 
 ## Stage 5: find the insights
 
-Before building the story and the digest, find what is surprising or useful. Check each of these and keep the ones that hold up:
+Run this before proposing the dashboard. Find what is surprising or useful. Check each of these and keep the ones that hold up:
 
 - **Biggest change:** the largest rise or fall vs the previous period, and which category drove it.
 - **Concentration:** does a small share of customers, products or days make up most of the total? ("Top 10% of customers bring 46% of revenue.")
@@ -124,4 +127,4 @@ Before building the story and the digest, find what is surprising or useful. Che
 
 For each insight, write one sentence with the number and the denominator, and the query that proves it. Then list the caveats: what the data does not prove yet (no source/referrer data, self-reported completions, small samples, missing months).
 
-These insights feed the story (`story-playbook.md`) and the digest message.
+These insights set the dashboard's headline and chart titles, and feed the story (`story-playbook.md`) and the agent's messages. Do not redo them later; reuse them.
