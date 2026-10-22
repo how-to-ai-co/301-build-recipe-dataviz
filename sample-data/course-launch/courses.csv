@@ -1,0 +1,41 @@
+course_id,provider,title,minutes
+K001,Brightpath,Building with APIs,150
+K002,Brightpath,Intro to machine learning,75
+K003,Brightpath,AI for marketing,15
+K004,Brightpath,AI for sales,45
+K005,Brightpath,Responsible AI,90
+K006,Brightpath,Research with AI,45
+K007,Brightpath,AI agents 101,45
+K008,Brightpath,Meeting notes with AI,45
+K009,Brightpath,Data analysis with AI,45
+K010,Brightpath,AI image tools,75
+K011,Brightpath,Writing with AI,75
+K012,Brightpath,Automating busywork,45
+K013,Brightpath,AI for spreadsheets,15
+K014,Brightpath,AI for customer support,150
+K015,Google,Prompting basics,150
+K016,Google,Building with APIs,15
+K017,Google,Intro to machine learning,150
+K018,Google,AI for marketing,15
+K019,Google,AI for sales,120
+K020,Google,Responsible AI,30
+K021,Anthropic,Research with AI,120
+K022,Anthropic,AI agents 101,60
+K023,Anthropic,Meeting notes with AI,30
+K024,Anthropic,Data analysis with AI,105
+K025,Anthropic,AI image tools,90
+K026,Anthropic,Writing with AI,30
+K027,Anthropic,Automating busywork,135
+K028,Anthropic,AI for spreadsheets,45
+K029,Microsoft,AI for customer support,60
+K030,Microsoft,Prompting basics,75
+K031,Microsoft,Building with APIs,150
+K032,Microsoft,Intro to machine learning,150
+K033,Microsoft,AI for marketing,60
+K034,Microsoft,AI for sales,105
+K035,OpenAI,Responsible AI,135
+K036,OpenAI,Research with AI,150
+K037,OpenAI,AI agents 101,45
+K038,HubSpot,Meeting notes with AI,90
+K039,HubSpot,Data analysis with AI,150
+K040,HubSpot,AI image tools,60

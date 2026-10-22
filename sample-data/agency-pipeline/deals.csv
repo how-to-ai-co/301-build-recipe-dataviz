@@ -1,0 +1,351 @@
+deal_id,company,owner,service,source,value,stage,created_at,stage_changed_at,closed_at,lost_reason
+D0001,Harbor Fitness,Maya,Website,referral,17000,lost,2025-10-02T10:00:00Z,2025-12-07T06:38:02Z,2025-12-07T06:38:02Z,chose competitor
+D0002,Stone Realty,Sam,SEO retainer,outbound,14000,lost,2025-10-06T15:00:00Z,2025-10-11T06:14:35Z,2025-10-11T06:14:35Z,went quiet
+D0003,Prairie Outdoors,Maya,Brand identity,partner,4000,lost,2025-10-07T10:00:00Z,2025-12-13T20:19:41Z,2025-12-13T20:19:41Z,timing
+D0004,Stone Studio,Maya,Content,referral,3500,lost,2025-10-09T09:00:00Z,2025-10-14T10:02:27Z,2025-10-14T10:02:27Z,budget
+D0005,Maple Fitness,Sam,SEO retainer,referral,16000,lost,2025-10-10T11:00:00Z,2025-12-23T04:49:06Z,2025-12-23T04:49:06Z,went quiet
+D0006,Bright Dental,Priya,Paid ads,website,9500,lost,2025-10-11T12:00:00Z,2025-10-27T18:16:37Z,2025-10-27T18:16:37Z,chose competitor
+D0007,Coastal Bakery,Sam,Website,website,16000,won,2025-10-14T08:00:00Z,2026-04-14T01:34:25Z,2026-04-14T01:34:25Z,
+D0008,Pine Wellness,Jordan,Brand identity,website,6000,won,2025-10-16T14:00:00Z,2025-12-07T04:15:57Z,2025-12-07T04:15:57Z,
+D0009,Stone Health,Priya,Website,referral,12000,won,2025-10-19T13:00:00Z,2026-02-08T23:48:16Z,2026-02-08T23:48:16Z,
+D0010,Pine Labs,Sam,Website,website,41500,lost,2025-10-21T10:00:00Z,2025-11-01T17:40:50Z,2025-11-01T17:40:50Z,went quiet
+D0011,Lumen Apparel,Priya,SEO retainer,referral,16500,lost,2025-10-21T11:00:00Z,2025-11-08T01:40:07Z,2025-11-08T01:40:07Z,went quiet
+D0012,Golden Builders,Maya,SEO retainer,website,17000,lost,2025-10-22T08:00:00Z,2025-11-04T02:48:57Z,2025-11-04T02:48:57Z,timing
+D0013,Copper Motors,Maya,Website,event,14000,lost,2025-10-24T14:00:00Z,2025-11-17T09:54:30Z,2025-11-17T09:54:30Z,timing
+D0014,Blue Dental,Maya,Website,website,23500,lost,2025-10-25T13:00:00Z,2025-12-24T01:15:40Z,2025-12-24T01:15:40Z,budget
+D0015,Harbor Bakery,Sam,SEO retainer,referral,6000,won,2025-10-26T13:00:00Z,2026-01-14T00:18:34Z,2026-01-14T00:18:34Z,
+D0016,Lumen Wellness,Maya,Website,outbound,14000,lost,2025-10-29T11:00:00Z,2025-11-29T02:35:45Z,2025-11-29T02:35:45Z,chose competitor
+D0017,Blue Fitness,Maya,Brand identity,partner,9500,won,2025-10-30T08:00:00Z,2026-04-19T12:26:32Z,2026-04-19T12:26:32Z,
+D0018,River Dental,Priya,Paid ads,website,9500,lost,2025-11-01T10:00:00Z,2025-11-22T01:03:32Z,2025-11-22T01:03:32Z,budget
+D0019,Prairie Clinic,Jordan,SEO retainer,outbound,21000,lost,2025-11-02T08:00:00Z,2025-12-26T14:54:28Z,2025-12-26T14:54:28Z,budget
+D0020,North Clinic,Jordan,Website,website,7500,lost,2025-11-04T10:00:00Z,2025-11-27T10:35:25Z,2025-11-27T10:35:25Z,timing
+D0021,Coastal Law,Priya,Website,website,16500,lost,2025-11-06T08:00:00Z,2025-11-21T04:34:24Z,2025-11-21T04:34:24Z,budget
+D0022,Prairie Law,Sam,SEO retainer,website,6500,lost,2025-11-07T12:00:00Z,2026-03-07T17:52:39Z,2026-03-07T17:52:39Z,budget
+D0023,Cedar Health,Sam,Content,outbound,10000,lost,2025-11-07T16:00:00Z,2025-11-16T14:22:09Z,2025-11-16T14:22:09Z,went quiet
+D0024,Harbor Clinic,Sam,Brand identity,outbound,12500,lost,2025-11-08T12:00:00Z,2026-01-16T02:47:02Z,2026-01-16T02:47:02Z,budget
+D0025,Iron Coffee,Maya,Website,referral,14000,won,2025-11-09T12:00:00Z,2026-05-14T14:18:15Z,2026-05-14T14:18:15Z,
+D0026,Maple Builders,Jordan,Website,referral,13000,lost,2025-11-10T12:00:00Z,2025-11-30T11:15:34Z,2025-11-30T11:15:34Z,chose competitor
+D0027,Bright Realty,Priya,Brand identity,referral,6500,lost,2025-11-11T12:00:00Z,2025-11-22T20:19:12Z,2025-11-22T20:19:12Z,timing
+D0028,Silver Apparel,Maya,Website,outbound,19000,proposal,2025-11-15T15:00:00Z,2026-01-18T18:12:29Z,,
+D0029,Blue Builders,Priya,Brand identity,outbound,3000,lost,2025-11-17T14:00:00Z,2026-01-03T12:15:41Z,2026-01-03T12:15:41Z,went quiet
+D0030,Stone Motors,Maya,Brand identity,website,16500,lost,2025-11-18T16:00:00Z,2026-07-13T09:00:50Z,2026-07-13T09:00:50Z,chose competitor
+D0031,North Logistics,Jordan,Brand identity,website,13000,lost,2025-11-19T15:00:00Z,2025-12-15T03:47:35Z,2025-12-15T03:47:35Z,budget
+D0032,Lumen Health,Sam,Brand identity,referral,10500,won,2025-11-20T12:00:00Z,2026-02-23T22:02:49Z,2026-02-23T22:02:49Z,
+D0033,Copper Labs,Jordan,Website,outbound,16000,lost,2025-11-21T16:00:00Z,2025-12-06T12:38:28Z,2025-12-06T12:38:28Z,went quiet
+D0034,Atlas Outdoors,Priya,Website,referral,16000,lost,2025-11-22T08:00:00Z,2025-12-18T15:36:20Z,2025-12-18T15:36:20Z,chose competitor
+D0035,Bright Fitness,Jordan,Website,website,13000,lost,2025-11-22T12:00:00Z,2026-01-13T20:53:27Z,2026-01-13T20:53:27Z,went quiet
+D0036,Atlas Outdoors LLC,Priya,Brand identity,referral,6500,lost,2025-11-23T12:00:00Z,2025-12-29T00:20:21Z,2025-12-29T00:20:21Z,budget
+D0037,Harbor Dental,Jordan,Brand identity,website,5000,won,2025-11-24T15:00:00Z,2026-04-13T12:43:45Z,2026-04-13T12:43:45Z,
+D0038,Prairie Foods,Priya,Website,partner,12500,lost,2025-11-27T08:00:00Z,2025-12-13T15:54:46Z,2025-12-13T15:54:46Z,budget
+D0039,Prairie Realty,Jordan,Website,referral,14000,lost,2025-11-28T09:00:00Z,2026-01-17T22:37:08Z,2026-01-17T22:37:08Z,chose competitor
+D0040,Lumen Studio,Priya,Paid ads,website,13500,won,2025-11-30T08:00:00Z,2026-02-15T10:39:33Z,2026-02-15T10:39:33Z,
+D0041,Pine Coffee,Jordan,SEO retainer,partner,10000,lost,2025-12-01T09:00:00Z,2025-12-22T01:27:08Z,2025-12-22T01:27:08Z,budget
+D0042,Cedar Labs,Maya,Website,referral,9000,lost,2025-12-04T14:00:00Z,2026-06-25T20:01:03Z,2026-06-25T20:01:03Z,budget
+D0043,Prairie Health,Jordan,Content,referral,5500,lost,2025-12-05T11:00:00Z,2025-12-17T17:14:04Z,2025-12-17T17:14:04Z,went quiet
+D0044,Iron Logistics,Sam,Website,website,19000,lost,2025-12-06T11:00:00Z,2026-03-17T11:17:41Z,2026-03-17T11:17:41Z,budget
+D0045,Prairie Health LLC,Jordan,Brand identity,website,8000,won,2025-12-08T10:00:00Z,2026-06-06T23:57:00Z,2026-06-06T23:57:00Z,
+D0046,Lumen Clinic,Maya,Website,website,7000,lost,2025-12-09T13:00:00Z,2026-01-28T14:50:48Z,2026-01-28T14:50:48Z,chose competitor
+D0047,Atlas Apparel,Sam,Website,referral,24000,lost,2025-12-10T16:00:00Z,2026-01-28T16:21:13Z,2026-01-28T16:21:13Z,budget
+D0048,Lumen Bakery,Maya,Content,website,10000,won,2025-12-13T14:00:00Z,2026-03-22T13:40:11Z,2026-03-22T13:40:11Z,
+D0049,Golden Outdoors,Jordan,Paid ads,outbound,11500,lost,2025-12-14T12:00:00Z,2026-01-13T07:07:13Z,2026-01-13T07:07:13Z,chose competitor
+D0050,Stone Law,Priya,SEO retainer,referral,20000,lost,2025-12-15T13:00:00Z,2025-12-21T16:27:35Z,2025-12-21T16:27:35Z,budget
+D0051,River Health,Sam,Brand identity,website,5000,lost,2025-12-16T16:00:00Z,2025-12-22T17:20:59Z,2025-12-22T17:20:59Z,went quiet
+D0052,Atlas Dental,Maya,Website,referral,12000,lost,2025-12-17T08:00:00Z,2026-02-10T22:03:16Z,2026-02-10T22:03:16Z,budget
+D0053,Golden Clinic,Maya,SEO retainer,referral,22500,lost,2025-12-18T10:00:00Z,2026-01-02T08:30:06Z,2026-01-02T08:30:06Z,chose competitor
+D0054,Stone Coffee,Sam,Website,referral,6000,won,2025-12-18T12:00:00Z,2026-07-26T17:19:25Z,2026-07-26T17:19:25Z,
+D0055,Maple Coffee,Maya,Paid ads,referral,10000,lost,2025-12-20T12:00:00Z,2026-02-15T03:43:50Z,2026-02-15T03:43:50Z,timing
+D0056,Prairie Health Co,Maya,Brand identity,referral,13000,won,2025-12-23T15:00:00Z,2026-04-20T13:49:49Z,2026-04-20T13:49:49Z,
+D0057,Iron Clinic,Priya,Paid ads,outbound,14000,lost,2025-12-24T11:00:00Z,2026-01-18T14:03:37Z,2026-01-18T14:03:37Z,chose competitor
+D0058,Iron Apparel,Priya,Website,website,23000,lost,2025-12-26T10:00:00Z,2026-06-27T02:58:05Z,2026-06-27T02:58:05Z,timing
+D0059,Copper Partners,Jordan,Website,referral,13000,lost,2025-12-27T13:00:00Z,2026-01-10T06:09:57Z,2026-01-10T06:09:57Z,budget
+D0060,Bright Coffee,Maya,Website,referral,8500,won,2025-12-28T11:00:00Z,2026-02-19T03:16:08Z,2026-02-19T03:16:08Z,
+D0061,Silver Logistics,Jordan,Website,website,31500,won,2025-12-30T10:00:00Z,2026-03-12T07:22:40Z,2026-03-12T07:22:40Z,
+D0062,Silver Health,Maya,SEO retainer,partner,12500,lost,2026-01-01T10:00:00Z,2026-01-20T10:46:30Z,2026-01-20T10:46:30Z,chose competitor
+D0063,Copper Wellness,Jordan,Brand identity,referral,8000,lost,2026-01-02T12:00:00Z,2026-01-14T08:12:33Z,2026-01-14T08:12:33Z,went quiet
+D0064,Atlas Foods,Jordan,Paid ads,partner,21500,won,2026-01-03T16:00:00Z,2026-08-02T09:08:06Z,2026-08-02T09:08:06Z,
+D0065,River Wellness,Jordan,Website,referral,10500,lost,2026-01-04T15:00:00Z,2026-01-29T20:04:30Z,2026-01-29T20:04:30Z,went quiet
+D0066,Coastal Builders,Jordan,Website,website,12500,won,2026-01-04T15:00:00Z,2026-09-02T03:39:56Z,2026-09-02T03:39:56Z,
+D0067,River Motors,Sam,SEO retainer,referral,9000,lost,2026-01-05T12:00:00Z,2026-01-17T08:40:11Z,2026-01-17T08:40:11Z,went quiet
+D0068,Prairie Realty LLC,Maya,Website,referral,19000,lost,2026-01-06T14:00:00Z,2026-03-13T12:15:28Z,2026-03-13T12:15:28Z,timing
+D0069,Coastal Labs,Sam,Brand identity,outbound,16500,lost,2026-01-06T15:00:00Z,2026-04-05T22:11:51Z,2026-04-05T22:11:51Z,went quiet
+D0070,River Health Co,Jordan,Website,outbound,8000,lost,2026-01-08T10:00:00Z,2026-02-07T20:57:49Z,2026-02-07T20:57:49Z,went quiet
+D0071,Pine Motors,Priya,Brand identity,referral,5500,lost,2026-01-09T08:00:00Z,2026-02-26T14:26:32Z,2026-02-26T14:26:32Z,went quiet
+D0072,Maple Builders Collective,Jordan,Content,outbound,5000,lost,2026-01-09T09:00:00Z,2026-01-13T02:01:31Z,2026-01-13T02:01:31Z,timing
+D0073,Cedar Realty,Jordan,Website,event,22500,lost,2026-01-10T14:00:00Z,2026-03-09T12:19:53Z,2026-03-09T12:19:53Z,went quiet
+D0074,Atlas Builders,Sam,Brand identity,website,10500,lost,2026-01-12T12:00:00Z,2026-03-04T10:45:47Z,2026-03-04T10:45:47Z,chose competitor
+D0075,North Coffee,Maya,Website,website,13000,won,2026-01-14T11:00:00Z,2026-03-16T21:53:04Z,2026-03-16T21:53:04Z,
+D0076,Silver Studio,Sam,Website,referral,24500,lost,2026-01-15T15:00:00Z,2026-01-29T03:03:28Z,2026-01-29T03:03:28Z,budget
+D0077,Atlas Law,Maya,Paid ads,referral,13500,lost,2026-01-16T12:00:00Z,2026-05-11T18:13:32Z,2026-05-11T18:13:32Z,timing
+D0078,Iron Outdoors,Maya,SEO retainer,referral,21000,won,2026-01-16T14:00:00Z,2026-03-23T21:02:06Z,2026-03-23T21:02:06Z,
+D0079,Maple Dental,Jordan,Brand identity,outbound,5500,lost,2026-01-18T11:00:00Z,2026-02-03T14:39:16Z,2026-02-03T14:39:16Z,budget
+D0080,Coastal Wellness,Jordan,Paid ads,website,22000,lost,2026-01-18T11:00:00Z,2026-01-24T07:38:31Z,2026-01-24T07:38:31Z,timing
+D0081,Coastal Bakery Co,Sam,Website,website,18000,lost,2026-01-21T10:00:00Z,2026-01-31T09:51:56Z,2026-01-31T09:51:56Z,chose competitor
+D0082,Copper Motors Collective,Maya,Website,outbound,19500,lost,2026-01-22T11:00:00Z,2026-03-08T22:06:08Z,2026-03-08T22:06:08Z,timing
+D0083,Copper Fitness,Maya,Brand identity,partner,7000,lost,2026-01-22T14:00:00Z,2026-03-21T20:44:33Z,2026-03-21T20:44:33Z,went quiet
+D0084,North Coffee Group,Jordan,Website,website,20500,lost,2026-01-24T11:00:00Z,2026-01-31T02:23:19Z,2026-01-31T02:23:19Z,went quiet
+D0085,River Labs,Jordan,Paid ads,outbound,16000,won,2026-01-26T08:00:00Z,2026-07-25T10:07:50Z,2026-07-25T10:07:50Z,
+D0086,North Labs,Maya,SEO retainer,referral,7500,lost,2026-01-28T13:00:00Z,2026-02-03T17:07:56Z,2026-02-03T17:07:56Z,timing
+D0087,Pine Wellness Group,Sam,Brand identity,event,7500,lost,2026-01-31T10:00:00Z,2026-02-27T19:04:46Z,2026-02-27T19:04:46Z,timing
+D0088,Blue Bakery,Jordan,SEO retainer,referral,16500,lost,2026-02-01T12:00:00Z,2026-02-07T09:17:16Z,2026-02-07T09:17:16Z,chose competitor
+D0089,Stone Partners,Jordan,Paid ads,website,18000,lost,2026-02-02T14:00:00Z,2026-02-13T15:27:55Z,2026-02-13T15:27:55Z,chose competitor
+D0090,Maple Clinic,Maya,Brand identity,referral,6500,lost,2026-02-04T15:00:00Z,2026-04-04T09:54:17Z,2026-04-04T09:54:17Z,timing
+D0091,Stone Motors Collective,Jordan,SEO retainer,partner,28000,lost,2026-02-05T15:00:00Z,2026-02-21T02:49:03Z,2026-02-21T02:49:03Z,went quiet
+D0092,Maple Realty,Sam,SEO retainer,referral,13500,lost,2026-02-06T08:00:00Z,2026-02-20T22:32:21Z,2026-02-20T22:32:21Z,chose competitor
+D0093,Cedar Builders,Priya,Brand identity,website,12000,lost,2026-02-07T10:00:00Z,2026-03-14T14:39:41Z,2026-03-14T14:39:41Z,budget
+D0094,Lumen Law,Maya,Brand identity,outbound,5500,lost,2026-02-08T08:00:00Z,2026-07-27T21:11:50Z,2026-07-27T21:11:50Z,budget
+D0095,Blue Dental LLC,Jordan,Paid ads,outbound,8500,lost,2026-02-08T16:00:00Z,2026-05-23T18:31:12Z,2026-05-23T18:31:12Z,budget
+D0096,Copper Fitness LLC,Maya,Website,referral,8500,lost,2026-02-10T13:00:00Z,2026-03-10T10:10:26Z,2026-03-10T10:10:26Z,budget
+D0097,Copper Apparel,Sam,SEO retainer,website,13000,lost,2026-02-11T11:00:00Z,2026-06-13T18:50:25Z,2026-06-13T18:50:25Z,went quiet
+D0098,North Logistics LLC,Jordan,Brand identity,website,3500,won,2026-02-12T13:00:00Z,2026-04-28T19:32:26Z,2026-04-28T19:32:26Z,
+D0099,Harbor Health,Maya,Website,outbound,22500,lost,2026-02-13T08:00:00Z,2026-04-06T11:28:11Z,2026-04-06T11:28:11Z,budget
+D0100,North Fitness,Maya,Website,outbound,13500,lost,2026-02-15T11:00:00Z,2026-03-03T06:37:53Z,2026-03-03T06:37:53Z,went quiet
+D0101,North Apparel,Priya,SEO retainer,outbound,20000,lost,2026-02-16T12:00:00Z,2026-06-03T04:23:27Z,2026-06-03T04:23:27Z,chose competitor
+D0102,Lumen Studio LLC,Maya,Paid ads,website,17500,lost,2026-02-17T09:00:00Z,2026-04-07T17:13:38Z,2026-04-07T17:13:38Z,chose competitor
+D0103,Lumen Law LLC,Priya,Paid ads,outbound,31500,won,2026-02-17T10:00:00Z,2026-07-03T14:10:41Z,2026-07-03T14:10:41Z,
+D0104,Pine Fitness,Sam,SEO retainer,referral,39500,lost,2026-02-18T10:00:00Z,2026-02-27T20:26:38Z,2026-02-27T20:26:38Z,budget
+D0105,Bright Fitness Group,Maya,Brand identity,website,13000,lost,2026-02-18T15:00:00Z,2026-06-23T03:13:20Z,2026-06-23T03:13:20Z,went quiet
+D0106,Prairie Partners,Jordan,Brand identity,outbound,15500,lost,2026-02-19T13:00:00Z,2026-09-03T11:51:02Z,2026-09-03T11:51:02Z,went quiet
+D0107,Stone Coffee Co,Maya,Website,outbound,11000,lost,2026-02-21T15:00:00Z,2026-03-02T06:46:42Z,2026-03-02T06:46:42Z,chose competitor
+D0108,Atlas Health,Sam,Website,website,17500,lost,2026-02-22T14:00:00Z,2026-04-28T18:44:46Z,2026-04-28T18:44:46Z,budget
+D0109,Copper Motors Co,Jordan,Website,event,16000,lost,2026-02-23T10:00:00Z,2026-04-03T08:19:12Z,2026-04-03T08:19:12Z,chose competitor
+D0110,Copper Wellness Group,Priya,Brand identity,website,5500,won,2026-02-23T12:00:00Z,2026-05-01T17:41:42Z,2026-05-01T17:41:42Z,
+D0111,North Coffee Co,Jordan,Content,outbound,5500,lost,2026-02-23T14:00:00Z,2026-05-21T17:46:00Z,2026-05-21T17:46:00Z,budget
+D0112,Blue Dental Collective,Maya,Website,referral,21000,lost,2026-02-25T15:00:00Z,2026-05-02T19:54:57Z,2026-05-02T19:54:57Z,chose competitor
+D0113,Prairie Realty Group,Sam,Website,partner,20500,lost,2026-02-26T11:00:00Z,2026-04-20T17:05:42Z,2026-04-20T17:05:42Z,went quiet
+D0114,Copper Motors Collective 113,Priya,Brand identity,website,9000,lost,2026-02-26T12:00:00Z,2026-04-18T07:24:27Z,2026-04-18T07:24:27Z,budget
+D0115,Golden Dental,Jordan,Website,referral,14500,lost,2026-02-27T10:00:00Z,2026-04-02T06:40:32Z,2026-04-02T06:40:32Z,budget
+D0116,Summit Coffee,Priya,Brand identity,website,5500,won,2026-02-27T16:00:00Z,2026-04-16T18:56:32Z,2026-04-16T18:56:32Z,
+D0117,Bright Apparel,Priya,Brand identity,partner,12500,lost,2026-03-02T15:00:00Z,2026-03-14T14:23:10Z,2026-03-14T14:23:10Z,budget
+D0118,Iron Bakery,Maya,Website,website,15000,lead,2026-03-04T12:00:00Z,2026-03-04T12:00:00Z,,
+D0119,Pine Bakery,Maya,Paid ads,referral,12000,lost,2026-03-05T16:00:00Z,2026-03-14T17:22:38Z,2026-03-14T17:22:38Z,chose competitor
+D0120,Summit Wellness,Maya,Website,website,12000,lost,2026-03-06T16:00:00Z,2026-03-20T13:20:10Z,2026-03-20T13:20:10Z,budget
+D0121,Pine Foods,Sam,SEO retainer,website,16500,lost,2026-03-07T11:00:00Z,2026-04-18T13:23:03Z,2026-04-18T13:23:03Z,timing
+D0122,North Health,Jordan,Website,event,9500,lost,2026-03-08T14:00:00Z,2026-07-02T01:02:51Z,2026-07-02T01:02:51Z,chose competitor
+D0123,Copper Bakery,Jordan,Content,referral,7500,won,2026-03-11T14:00:00Z,2026-05-29T19:35:03Z,2026-05-29T19:35:03Z,
+D0124,Atlas Realty,Jordan,Website,event,11500,won,2026-03-13T08:00:00Z,2026-06-03T02:39:19Z,2026-06-03T02:39:19Z,
+D0125,Harbor Labs,Priya,Website,website,20000,won,2026-03-14T11:00:00Z,2026-06-04T09:02:25Z,2026-06-04T09:02:25Z,
+D0126,River Labs LLC,Sam,Website,referral,18500,lost,2026-03-15T11:00:00Z,2026-04-19T07:49:56Z,2026-04-19T07:49:56Z,chose competitor
+D0127,North Wellness,Sam,Website,website,14500,lost,2026-03-16T14:00:00Z,2026-03-27T19:21:42Z,2026-03-27T19:21:42Z,timing
+D0128,Golden Motors,Jordan,Brand identity,outbound,4500,lost,2026-03-17T08:00:00Z,2026-04-15T11:03:35Z,2026-04-15T11:03:35Z,went quiet
+D0129,Stone Dental,Maya,Website,website,12500,won,2026-03-19T08:00:00Z,2026-04-26T17:56:26Z,2026-04-26T17:56:26Z,
+D0130,Prairie Labs,Maya,Brand identity,website,7000,lost,2026-03-20T10:00:00Z,2026-03-27T16:41:53Z,2026-03-27T16:41:53Z,went quiet
+D0131,Harbor Realty,Priya,Brand identity,outbound,5500,won,2026-03-22T11:00:00Z,2026-06-20T05:10:20Z,2026-06-20T05:10:20Z,
+D0132,North Dental,Maya,SEO retainer,referral,39500,lost,2026-03-23T09:00:00Z,2026-04-26T17:58:24Z,2026-04-26T17:58:24Z,chose competitor
+D0133,Prairie Studio,Maya,Website,partner,18500,won,2026-03-23T09:00:00Z,2026-05-18T19:34:17Z,2026-05-18T19:34:17Z,
+D0134,Bright Bakery,Jordan,Content,outbound,7000,lost,2026-03-24T14:00:00Z,2026-04-30T02:41:25Z,2026-04-30T02:41:25Z,budget
+D0135,Prairie Apparel,Priya,Website,referral,19500,won,2026-03-25T09:00:00Z,2026-05-20T01:26:35Z,2026-05-20T01:26:35Z,
+D0136,Coastal Logistics,Sam,Website,event,31500,lost,2026-03-26T13:00:00Z,2026-05-12T22:26:57Z,2026-05-12T22:26:57Z,budget
+D0137,Cedar Labs Collective,Maya,Website,outbound,37000,lost,2026-03-27T12:00:00Z,2026-06-12T10:58:48Z,2026-06-12T10:58:48Z,went quiet
+D0138,Harbor Logistics,Sam,Paid ads,partner,6500,lost,2026-03-29T10:00:00Z,2026-04-04T02:44:31Z,2026-04-04T02:44:31Z,budget
+D0139,Atlas Apparel Group,Sam,Brand identity,website,15000,lost,2026-03-30T11:00:00Z,2026-05-23T16:39:13Z,2026-05-23T16:39:13Z,went quiet
+D0140,Harbor Health Group,Sam,Brand identity,website,9000,lost,2026-03-30T16:00:00Z,2026-04-13T12:32:47Z,2026-04-13T12:32:47Z,went quiet
+D0141,Bright Law,Jordan,Website,outbound,9000,lost,2026-03-31T13:00:00Z,2026-07-13T07:18:27Z,2026-07-13T07:18:27Z,timing
+D0142,River Realty,Priya,Website,website,8500,lost,2026-04-01T14:00:00Z,2026-04-17T19:48:23Z,2026-04-17T19:48:23Z,timing
+D0143,Harbor Health LLC,Maya,Paid ads,partner,11000,lost,2026-04-02T10:00:00Z,2026-05-04T12:00:44Z,2026-05-04T12:00:44Z,went quiet
+D0144,Silver Wellness,Priya,Content,referral,2500,lost,2026-04-03T15:00:00Z,2026-06-06T21:59:19Z,2026-06-06T21:59:19Z,chose competitor
+D0145,Cedar Fitness,Maya,Website,event,29000,lost,2026-04-04T10:00:00Z,2026-07-11T22:06:46Z,2026-07-11T22:06:46Z,budget
+D0146,Atlas Apparel Collective,Priya,Brand identity,partner,11500,lost,2026-04-05T14:00:00Z,2026-09-05T00:26:13Z,2026-09-05T00:26:13Z,went quiet
+D0147,Prairie Wellness,Sam,Brand identity,website,7500,lost,2026-04-06T09:00:00Z,2026-04-13T04:38:48Z,2026-04-13T04:38:48Z,budget
+D0148,Coastal Logistics Collective,Maya,Website,website,20000,lost,2026-04-07T13:00:00Z,2026-04-13T21:47:48Z,2026-04-13T21:47:48Z,chose competitor
+D0149,Lumen Wellness Collective,Maya,Brand identity,website,7500,won,2026-04-07T15:00:00Z,2026-06-03T18:04:53Z,2026-06-03T18:04:53Z,
+D0150,Cedar Outdoors,Jordan,SEO retainer,website,16500,won,2026-04-08T12:00:00Z,2026-06-20T06:01:45Z,2026-06-20T06:01:45Z,
+D0151,Harbor Studio,Priya,Brand identity,referral,11000,lost,2026-04-10T11:00:00Z,2026-04-18T02:45:50Z,2026-04-18T02:45:50Z,went quiet
+D0152,Harbor Apparel,Jordan,SEO retainer,website,19500,lost,2026-04-11T16:00:00Z,2026-05-08T11:01:30Z,2026-05-08T11:01:30Z,timing
+D0153,North Realty,Priya,Website,website,8500,lost,2026-04-12T08:00:00Z,2026-08-11T19:27:58Z,2026-08-11T19:27:58Z,budget
+D0154,Coastal Motors,Priya,Website,outbound,14500,won,2026-04-13T11:00:00Z,2026-09-05T17:18:36Z,2026-09-05T17:18:36Z,
+D0155,Bright Wellness,Priya,Website,referral,16000,won,2026-04-13T13:00:00Z,2026-08-04T00:11:36Z,2026-08-04T00:11:36Z,
+D0156,Silver Foods,Priya,Content,outbound,6500,lost,2026-04-16T12:00:00Z,2026-05-04T00:15:41Z,2026-05-04T00:15:41Z,budget
+D0157,Pine Bakery Collective,Priya,Website,website,18500,lost,2026-04-18T13:00:00Z,2026-08-14T06:29:22Z,2026-08-14T06:29:22Z,timing
+D0158,Maple Dental LLC,Jordan,Website,website,16000,lost,2026-04-19T14:00:00Z,2026-04-24T18:49:27Z,2026-04-24T18:49:27Z,budget
+D0159,North Builders,Priya,Paid ads,referral,13500,lost,2026-04-20T15:00:00Z,2026-06-16T05:38:37Z,2026-06-16T05:38:37Z,went quiet
+D0160,Prairie Law LLC,Jordan,SEO retainer,website,50000,lead,2026-04-21T12:00:00Z,2026-04-21T12:00:00Z,,
+D0161,River Builders,Maya,SEO retainer,outbound,17000,negotiation,2026-04-22T14:00:00Z,2026-07-25T08:38:33Z,,
+D0162,Lumen Wellness LLC,Jordan,Paid ads,website,6000,won,2026-04-23T09:00:00Z,2026-09-17T00:22:21Z,2026-09-17T00:22:21Z,
+D0163,Coastal Fitness,Priya,Brand identity,event,5000,lost,2026-04-24T13:00:00Z,2026-07-20T20:07:47Z,2026-07-20T20:07:47Z,went quiet
+D0164,Summit Labs,Priya,Brand identity,website,6500,lost,2026-04-25T09:00:00Z,2026-08-02T22:08:42Z,2026-08-02T22:08:42Z,budget
+D0165,Coastal Bakery Group,Maya,Brand identity,referral,7500,lost,2026-04-25T10:00:00Z,2026-06-17T22:10:29Z,2026-06-17T22:10:29Z,budget
+D0166,Coastal Foods,Priya,Website,referral,10000,lost,2026-04-27T10:00:00Z,2026-06-21T03:51:23Z,2026-06-21T03:51:23Z,chose competitor
+D0167,Prairie Bakery,Jordan,SEO retainer,website,15500,lost,2026-04-28T10:00:00Z,2026-05-13T09:15:29Z,2026-05-13T09:15:29Z,timing
+D0168,Pine Fitness Co,Maya,Paid ads,website,18500,won,2026-04-29T13:00:00Z,2026-08-08T18:39:02Z,2026-08-08T18:39:02Z,
+D0169,Bright Builders,Jordan,Brand identity,outbound,12500,lost,2026-04-30T13:00:00Z,2026-06-15T02:20:00Z,2026-06-15T02:20:00Z,timing
+D0170,River Wellness Co,Sam,SEO retainer,referral,8000,lost,2026-05-03T13:00:00Z,2026-06-27T22:27:12Z,2026-06-27T22:27:12Z,chose competitor
+D0171,Coastal Realty,Maya,Paid ads,event,10000,lost,2026-05-04T15:00:00Z,2026-09-16T21:17:23Z,2026-09-16T21:17:23Z,went quiet
+D0172,Lumen Labs,Maya,SEO retainer,website,14500,lost,2026-05-05T12:00:00Z,2026-05-15T15:31:10Z,2026-05-15T15:31:10Z,budget
+D0173,Stone Coffee LLC,Priya,Paid ads,website,24000,won,2026-05-05T16:00:00Z,2026-06-16T10:01:07Z,2026-06-16T10:01:07Z,
+D0174,Stone Realty Collective,Jordan,Paid ads,outbound,12500,qualified,2026-05-06T10:00:00Z,2026-05-27T23:21:21Z,,
+D0175,Iron Dental,Maya,Brand identity,referral,11500,negotiation,2026-05-06T15:00:00Z,2026-08-07T09:15:28Z,,
+D0176,North Dental Collective,Maya,Website,website,19500,negotiation,2026-05-07T08:00:00Z,2026-09-21T09:19:51Z,,
+D0177,Pine Partners,Sam,Website,partner,13000,lost,2026-05-09T14:00:00Z,2026-06-21T18:03:24Z,2026-06-21T18:03:24Z,budget
+D0178,Copper Logistics,Priya,Brand identity,outbound,12000,lost,2026-05-09T15:00:00Z,2026-06-10T18:40:50Z,2026-06-10T18:40:50Z,timing
+D0179,Atlas Logistics,Priya,Paid ads,outbound,27500,won,2026-05-10T15:00:00Z,2026-07-28T14:54:47Z,2026-07-28T14:54:47Z,
+D0180,Pine Realty,Sam,Website,website,8000,lost,2026-05-10T15:00:00Z,2026-07-15T23:58:15Z,2026-07-15T23:58:15Z,budget
+D0181,Summit Apparel,Sam,Brand identity,referral,12500,lost,2026-05-11T16:00:00Z,2026-06-16T03:04:23Z,2026-06-16T03:04:23Z,budget
+D0182,Pine Health,Maya,SEO retainer,website,24000,lost,2026-05-12T11:00:00Z,2026-05-16T20:58:19Z,2026-05-16T20:58:19Z,went quiet
+D0183,Bright Realty Co,Maya,Brand identity,partner,9500,lost,2026-05-12T13:00:00Z,2026-05-23T23:12:52Z,2026-05-23T23:12:52Z,timing
+D0184,Summit Law,Maya,Website,referral,7000,lost,2026-05-12T13:00:00Z,2026-05-19T14:54:18Z,2026-05-19T14:54:18Z,budget
+D0185,Pine Fitness Group,Jordan,Website,website,11500,lost,2026-05-13T15:00:00Z,2026-05-27T20:47:55Z,2026-05-27T20:47:55Z,went quiet
+D0186,Maple Health,Jordan,Website,website,13500,lost,2026-05-14T08:00:00Z,2026-05-27T15:03:38Z,2026-05-27T15:03:38Z,went quiet
+D0187,Bright Realty Collective,Jordan,Brand identity,event,12500,lost,2026-05-17T09:00:00Z,2026-07-05T06:40:05Z,2026-07-05T06:40:05Z,budget
+D0188,Blue Clinic,Priya,SEO retainer,event,18000,lost,2026-05-17T14:00:00Z,2026-05-24T06:05:29Z,2026-05-24T06:05:29Z,went quiet
+D0189,Summit Outdoors,Maya,Brand identity,website,4500,lost,2026-05-18T13:00:00Z,2026-06-22T00:15:39Z,2026-06-22T00:15:39Z,chose competitor
+D0190,Golden Wellness,Jordan,SEO retainer,partner,37500,qualified,2026-05-18T16:00:00Z,2026-05-28T13:12:18Z,,
+D0191,Lumen Fitness,Maya,Paid ads,outbound,13500,lost,2026-05-19T16:00:00Z,2026-06-01T12:25:38Z,2026-06-01T12:25:38Z,chose competitor
+D0192,Blue Bakery Co,Jordan,SEO retainer,referral,25500,lost,2026-05-20T16:00:00Z,2026-09-02T06:21:01Z,2026-09-02T06:21:01Z,went quiet
+D0193,Copper Labs Co,Jordan,Website,partner,7000,lost,2026-05-21T12:00:00Z,2026-05-30T07:11:25Z,2026-05-30T07:11:25Z,budget
+D0194,Cedar Labs LLC,Priya,Brand identity,referral,3500,qualified,2026-05-22T15:00:00Z,2026-09-27T21:23:41Z,,
+D0195,Harbor Clinic Collective,Maya,Brand identity,website,9000,lost,2026-05-23T16:00:00Z,2026-06-22T07:33:38Z,2026-06-22T07:33:38Z,went quiet
+D0196,Blue Wellness,Sam,Website,referral,16000,won,2026-05-24T15:00:00Z,2026-08-01T08:37:23Z,2026-08-01T08:37:23Z,
+D0197,Prairie Fitness,Priya,Website,outbound,6500,lost,2026-05-25T08:00:00Z,2026-09-30T01:51:41Z,2026-09-30T01:51:41Z,budget
+D0198,Harbor Dental Co,Maya,Brand identity,website,6500,won,2026-05-25T13:00:00Z,2026-08-12T02:58:19Z,2026-08-12T02:58:19Z,
+D0199,Coastal Outdoors,Maya,Brand identity,outbound,17500,proposal,2026-05-26T16:00:00Z,2026-09-16T17:39:12Z,,
+D0200,Coastal Bakery Group 199,Priya,SEO retainer,website,9500,lost,2026-05-27T10:00:00Z,2026-06-02T22:10:09Z,2026-06-02T22:10:09Z,budget
+D0201,River Foods,Sam,Website,referral,10500,lost,2026-05-27T13:00:00Z,2026-06-06T02:48:45Z,2026-06-06T02:48:45Z,budget
+D0202,Pine Outdoors,Maya,Content,referral,5500,lost,2026-05-28T16:00:00Z,2026-06-27T21:08:04Z,2026-06-27T21:08:04Z,budget
+D0203,Copper Wellness LLC,Maya,Paid ads,referral,17500,lost,2026-05-29T16:00:00Z,2026-07-16T21:17:51Z,2026-07-16T21:17:51Z,timing
+D0204,Silver Fitness,Maya,SEO retainer,website,41500,lost,2026-05-30T09:00:00Z,2026-06-17T11:39:05Z,2026-06-17T11:39:05Z,budget
+D0205,Harbor Outdoors,Jordan,SEO retainer,referral,8500,lost,2026-06-01T14:00:00Z,2026-06-12T13:02:48Z,2026-06-12T13:02:48Z,budget
+D0206,North Health Collective,Sam,Website,outbound,16000,proposal,2026-06-01T14:00:00Z,2026-08-30T20:21:11Z,,
+D0207,Coastal Clinic,Priya,Website,event,6500,lost,2026-06-02T10:00:00Z,2026-06-27T07:35:34Z,2026-06-27T07:35:34Z,chose competitor
+D0208,Harbor Apparel Group,Priya,Website,referral,7000,lost,2026-06-03T16:00:00Z,2026-07-06T00:49:25Z,2026-07-06T00:49:25Z,budget
+D0209,Iron Partners,Jordan,Website,referral,18500,proposal,2026-06-04T10:00:00Z,2026-09-29T15:11:55Z,,
+D0210,River Logistics,Maya,Brand identity,website,11500,won,2026-06-04T16:00:00Z,2026-08-12T05:31:50Z,2026-08-12T05:31:50Z,
+D0211,Summit Partners,Jordan,Paid ads,referral,5500,lost,2026-06-07T11:00:00Z,2026-07-29T05:35:32Z,2026-07-29T05:35:32Z,chose competitor
+D0212,Maple Wellness,Sam,Website,outbound,30000,lost,2026-06-08T14:00:00Z,2026-08-19T16:08:41Z,2026-08-19T16:08:41Z,went quiet
+D0213,Lumen Health Group,Priya,Website,referral,6500,negotiation,2026-06-09T10:00:00Z,2026-09-28T19:02:00Z,,
+D0214,Pine Builders,Priya,SEO retainer,outbound,12000,won,2026-06-09T15:00:00Z,2026-09-01T21:00:55Z,2026-09-01T21:00:55Z,
+D0215,Summit Partners LLC,Priya,Paid ads,event,11000,proposal,2026-06-10T09:00:00Z,2026-08-22T12:45:32Z,,
+D0216,Copper Logistics Collective,Jordan,Website,outbound,17500,won,2026-06-11T11:00:00Z,2026-09-14T05:33:46Z,2026-09-14T05:33:46Z,
+D0217,Prairie Wellness Group,Maya,SEO retainer,referral,15500,lost,2026-06-11T12:00:00Z,2026-06-20T20:22:44Z,2026-06-20T20:22:44Z,went quiet
+D0218,Stone Apparel,Priya,Website,website,7500,lost,2026-06-12T08:00:00Z,2026-06-27T00:46:07Z,2026-06-27T00:46:07Z,timing
+D0219,Copper Apparel Group,Maya,Brand identity,referral,11000,lost,2026-06-14T13:00:00Z,2026-07-28T17:04:32Z,2026-07-28T17:04:32Z,budget
+D0220,Maple Wellness Co,Maya,Brand identity,outbound,8000,won,2026-06-14T14:00:00Z,2026-08-26T08:35:18Z,2026-08-26T08:35:18Z,
+D0221,Bright Bakery Group,Jordan,Website,outbound,10000,lead,2026-06-16T08:00:00Z,2026-06-16T08:00:00Z,,
+D0222,Stone Outdoors,Maya,Website,outbound,12500,lost,2026-06-16T10:00:00Z,2026-07-22T12:09:24Z,2026-07-22T12:09:24Z,went quiet
+D0223,Harbor Bakery Co,Priya,Paid ads,outbound,8500,lost,2026-06-17T09:00:00Z,2026-06-29T14:23:26Z,2026-06-29T14:23:26Z,timing
+D0224,Iron Wellness,Sam,SEO retainer,website,31000,lost,2026-06-17T12:00:00Z,2026-08-16T07:41:33Z,2026-08-16T07:41:33Z,chose competitor
+D0225,Iron Bakery LLC,Jordan,SEO retainer,referral,9000,proposal,2026-06-18T11:00:00Z,2026-09-13T23:48:48Z,,
+D0226,Atlas Partners,Maya,Website,outbound,10500,lost,2026-06-19T09:00:00Z,2026-07-28T15:34:42Z,2026-07-28T15:34:42Z,timing
+D0227,Copper Health,Maya,Website,referral,16500,lost,2026-06-20T11:00:00Z,2026-06-26T01:11:31Z,2026-06-26T01:11:31Z,went quiet
+D0228,Prairie Coffee,Jordan,Website,referral,18500,lost,2026-06-20T16:00:00Z,2026-08-03T21:08:23Z,2026-08-03T21:08:23Z,budget
+D0229,Atlas Coffee,Maya,SEO retainer,website,21000,lost,2026-06-21T09:00:00Z,2026-07-02T04:27:58Z,2026-07-02T04:27:58Z,went quiet
+D0230,North Realty Collective,Maya,Brand identity,outbound,8500,lost,2026-06-21T11:00:00Z,2026-07-03T14:14:22Z,2026-07-03T14:14:22Z,went quiet
+D0231,Cedar Coffee,Jordan,Website,website,11500,qualified,2026-06-22T15:00:00Z,2026-07-20T12:43:46Z,,
+D0232,Golden Health,Jordan,Brand identity,website,13500,lost,2026-06-23T08:00:00Z,2026-09-14T04:00:16Z,2026-09-14T04:00:16Z,budget
+D0233,Bright Bakery Co,Priya,SEO retainer,outbound,20500,lost,2026-06-25T16:00:00Z,2026-07-29T03:22:31Z,2026-07-29T03:22:31Z,chose competitor
+D0234,Silver Studio Group,Maya,Content,outbound,8000,lost,2026-06-26T14:00:00Z,2026-09-12T23:01:01Z,2026-09-12T23:01:01Z,chose competitor
+D0235,Atlas Foods Group,Sam,Website,referral,13500,won,2026-06-27T09:00:00Z,2026-09-15T05:31:05Z,2026-09-15T05:31:05Z,
+D0236,Iron Foods,Jordan,Brand identity,outbound,11500,lost,2026-06-27T15:00:00Z,2026-08-12T14:48:51Z,2026-08-12T14:48:51Z,went quiet
+D0237,Summit Bakery,Priya,SEO retainer,outbound,5000,won,2026-06-28T09:00:00Z,2026-08-14T13:51:14Z,2026-08-14T13:51:14Z,
+D0238,Maple Fitness Collective,Priya,Website,event,21500,lost,2026-06-30T13:00:00Z,2026-09-12T01:12:50Z,2026-09-12T01:12:50Z,went quiet
+D0239,Maple Outdoors,Jordan,Brand identity,partner,13000,lost,2026-07-01T10:00:00Z,2026-08-09T14:18:58Z,2026-08-09T14:18:58Z,timing
+D0240,Cedar Coffee Collective,Jordan,SEO retainer,referral,46500,lost,2026-07-01T11:00:00Z,2026-08-20T14:37:56Z,2026-08-20T14:37:56Z,went quiet
+D0241,Maple Apparel,Jordan,Brand identity,outbound,11000,proposal,2026-07-02T16:00:00Z,2026-08-31T06:55:04Z,,
+D0242,Summit Wellness LLC,Priya,Website,partner,25000,lost,2026-07-03T08:00:00Z,2026-08-12T10:41:39Z,2026-08-12T10:41:39Z,budget
+D0243,Summit Fitness,Sam,Paid ads,website,7500,proposal,2026-07-04T12:00:00Z,2026-07-31T04:06:43Z,,
+D0244,River Logistics LLC,Priya,Website,referral,16500,lost,2026-07-05T10:00:00Z,2026-07-08T03:17:12Z,2026-07-08T03:17:12Z,budget
+D0245,Pine Studio,Sam,SEO retainer,website,20500,qualified,2026-07-06T16:00:00Z,2026-09-07T00:13:55Z,,
+D0246,Copper Labs Collective,Maya,Website,partner,6000,lost,2026-07-07T13:00:00Z,2026-09-28T01:58:37Z,2026-09-28T01:58:37Z,went quiet
+D0247,Harbor Fitness Collective,Priya,Brand identity,website,13500,lost,2026-07-08T08:00:00Z,2026-08-12T15:23:42Z,2026-08-12T15:23:42Z,budget
+D0248,Harbor Health Group 247,Maya,Brand identity,referral,9500,lost,2026-07-09T13:00:00Z,2026-08-26T02:06:50Z,2026-08-26T02:06:50Z,chose competitor
+D0249,Maple Dental Collective,Sam,Brand identity,website,5500,won,2026-07-09T13:00:00Z,2026-09-12T23:25:19Z,2026-09-12T23:25:19Z,
+D0250,Prairie Motors,Maya,Paid ads,referral,10500,negotiation,2026-07-10T14:00:00Z,2026-09-16T00:10:10Z,,
+D0251,Iron Labs,Maya,Website,event,13500,lost,2026-07-11T13:00:00Z,2026-07-26T03:02:38Z,2026-07-26T03:02:38Z,budget
+D0252,Cedar Bakery,Priya,Website,referral,14000,won,2026-07-11T15:00:00Z,2026-09-13T17:13:00Z,2026-09-13T17:13:00Z,
+D0253,Iron Builders,Priya,Paid ads,referral,18000,lost,2026-07-12T10:00:00Z,2026-09-15T20:37:30Z,2026-09-15T20:37:30Z,budget
+D0254,Atlas Dental LLC,Jordan,Website,referral,13000,lead,2026-07-13T11:00:00Z,2026-07-13T11:00:00Z,,
+D0255,Prairie Law Co,Maya,Website,outbound,20000,lost,2026-07-14T10:00:00Z,2026-08-01T21:03:43Z,2026-08-01T21:03:43Z,timing
+D0256,Iron Labs LLC,Maya,Website,event,30000,negotiation,2026-07-15T10:00:00Z,2026-09-25T06:17:57Z,,
+D0257,Bright Bakery Co 255,Priya,SEO retainer,referral,31500,proposal,2026-07-15T15:00:00Z,2026-08-11T07:18:27Z,,
+D0258,Maple Labs,Maya,SEO retainer,outbound,17000,lost,2026-07-17T10:00:00Z,2026-07-28T03:29:34Z,2026-07-28T03:29:34Z,budget
+D0259,Bright Motors,Maya,SEO retainer,website,9500,won,2026-07-17T12:00:00Z,2026-09-11T06:14:47Z,2026-09-11T06:14:47Z,
+D0260,Blue Dental LLC 260,Jordan,Content,event,11500,qualified,2026-07-20T10:00:00Z,2026-08-10T14:02:07Z,,
+D0261,North Bakery,Maya,Content,partner,3500,lost,2026-07-20T13:00:00Z,2026-08-04T15:59:32Z,2026-08-04T15:59:32Z,went quiet
+D0262,Coastal Outdoors Group,Jordan,Paid ads,website,8500,proposal,2026-07-21T14:00:00Z,2026-08-05T08:45:43Z,,
+D0263,Maple Clinic Group,Sam,Brand identity,referral,27500,lost,2026-07-21T14:00:00Z,2026-08-09T10:10:57Z,2026-08-09T10:10:57Z,went quiet
+D0264,Golden Coffee,Maya,Brand identity,partner,10500,qualified,2026-07-22T10:00:00Z,2026-07-28T08:10:36Z,,
+D0265,North Clinic Collective,Maya,SEO retainer,outbound,21500,proposal,2026-07-22T13:00:00Z,2026-08-31T22:37:48Z,,
+D0266,Iron Foods Co,Maya,Website,outbound,8500,lost,2026-07-24T11:00:00Z,2026-08-05T06:50:41Z,2026-08-05T06:50:41Z,budget
+D0267,Stone Bakery,Jordan,Brand identity,website,4000,negotiation,2026-07-25T14:00:00Z,2026-09-30T21:20:36Z,,
+D0268,Atlas Labs,Maya,Brand identity,website,8000,lost,2026-07-26T14:00:00Z,2026-08-05T16:49:41Z,2026-08-05T16:49:41Z,went quiet
+D0269,Lumen Foods,Priya,Paid ads,event,13000,negotiation,2026-07-27T12:00:00Z,2026-09-14T13:14:57Z,,
+D0270,Silver Realty,Maya,Website,referral,16500,proposal,2026-07-27T13:00:00Z,2026-09-24T13:19:37Z,,
+D0271,Harbor Realty LLC,Maya,Paid ads,outbound,11000,lost,2026-07-28T10:00:00Z,2026-08-17T01:51:13Z,2026-08-17T01:51:13Z,budget
+D0272,Atlas Labs LLC,Sam,Brand identity,referral,11000,lost,2026-07-29T11:00:00Z,2026-09-06T10:01:28Z,2026-09-06T10:01:28Z,chose competitor
+D0273,Coastal Wellness Group,Jordan,Website,website,15000,lead,2026-07-29T12:00:00Z,2026-07-29T12:00:00Z,,
+D0274,Silver Health Collective,Priya,Content,referral,5000,lost,2026-07-30T08:00:00Z,2026-08-18T12:10:59Z,2026-08-18T12:10:59Z,chose competitor
+D0275,River Fitness,Maya,Website,referral,10000,lost,2026-07-31T16:00:00Z,2026-09-07T07:34:10Z,2026-09-07T07:34:10Z,budget
+D0276,Cedar Foods,Sam,Brand identity,referral,9500,lost,2026-08-01T10:00:00Z,2026-08-17T05:37:53Z,2026-08-17T05:37:53Z,budget
+D0277,Coastal Wellness Co,Priya,Brand identity,event,5000,lost,2026-08-02T13:00:00Z,2026-08-14T02:39:51Z,2026-08-14T02:39:51Z,timing
+D0278,Maple Labs LLC,Jordan,Paid ads,website,12000,lost,2026-08-03T09:00:00Z,2026-08-09T09:20:16Z,2026-08-09T09:20:16Z,chose competitor
+D0279,River Dental Co,Jordan,Paid ads,outbound,9500,qualified,2026-08-03T15:00:00Z,2026-08-25T01:16:35Z,,
+D0280,Summit Studio,Priya,Website,outbound,10500,lost,2026-08-04T16:00:00Z,2026-09-23T19:56:12Z,2026-09-23T19:56:12Z,budget
+D0281,Coastal Motors Collective,Sam,Paid ads,website,15500,negotiation,2026-08-05T14:00:00Z,2026-09-06T09:24:46Z,,
+D0282,Lumen Fitness LLC,Priya,Content,partner,5500,lead,2026-08-06T12:00:00Z,2026-08-06T12:00:00Z,,
+D0283,Atlas Clinic,Priya,Brand identity,referral,11500,lost,2026-08-07T10:00:00Z,2026-09-17T03:28:55Z,2026-09-17T03:28:55Z,budget
+D0284,Summit Coffee LLC,Maya,Brand identity,event,13500,lost,2026-08-07T14:00:00Z,2026-08-28T05:03:10Z,2026-08-28T05:03:10Z,timing
+D0285,Bright Clinic,Jordan,Website,event,9000,lost,2026-08-08T12:00:00Z,2026-08-17T19:19:42Z,2026-08-17T19:19:42Z,chose competitor
+D0286,Coastal Health,Maya,Website,website,13500,qualified,2026-08-09T09:00:00Z,2026-08-15T17:47:06Z,,
+D0287,Harbor Foods,Jordan,Website,referral,10000,lost,2026-08-10T11:00:00Z,2026-08-16T03:09:02Z,2026-08-16T03:09:02Z,chose competitor
+D0288,Golden Motors Group,Sam,Paid ads,partner,18500,lost,2026-08-11T14:00:00Z,2026-09-24T10:26:22Z,2026-09-24T10:26:22Z,budget
+D0289,Bright Wellness Co,Sam,Brand identity,website,16500,lead,2026-08-12T12:00:00Z,2026-08-12T12:00:00Z,,
+D0290,Harbor Apparel Group 289,Jordan,Brand identity,website,10500,proposal,2026-08-13T08:00:00Z,2026-09-25T03:36:39Z,,
+D0291,Prairie Motors Collective,Priya,Website,event,13000,lead,2026-08-14T08:00:00Z,2026-08-14T08:00:00Z,,
+D0292,Cedar Partners,Sam,Website,referral,22000,qualified,2026-08-14T11:00:00Z,2026-08-30T14:19:01Z,,
+D0293,Blue Partners,Jordan,Paid ads,referral,9500,lost,2026-08-15T08:00:00Z,2026-08-27T03:30:33Z,2026-08-27T03:30:33Z,went quiet
+D0294,Atlas Motors,Jordan,Paid ads,referral,11000,lost,2026-08-15T12:00:00Z,2026-09-21T10:29:24Z,2026-09-21T10:29:24Z,went quiet
+D0295,Iron Clinic Collective,Jordan,Brand identity,website,3000,lost,2026-08-16T15:00:00Z,2026-08-28T06:13:05Z,2026-08-28T06:13:05Z,budget
+D0296,Harbor Outdoors Collective,Maya,Brand identity,partner,8000,lost,2026-08-17T13:00:00Z,2026-09-25T05:54:26Z,2026-09-25T05:54:26Z,budget
+D0297,Lumen Apparel Group,Jordan,Brand identity,outbound,18500,lead,2026-08-17T15:00:00Z,2026-08-17T15:00:00Z,,
+D0298,Pine Coffee Group,Maya,Paid ads,website,8500,lost,2026-08-18T15:00:00Z,2026-08-29T23:11:47Z,2026-08-29T23:11:47Z,budget
+D0299,North Dental Collective 298,Jordan,Paid ads,event,6000,qualified,2026-08-19T13:00:00Z,2026-09-12T11:47:57Z,,
+D0300,Blue Law,Priya,Website,referral,12000,qualified,2026-08-20T12:00:00Z,2026-09-23T23:46:31Z,,
+D0301,Silver Builders,Maya,SEO retainer,website,13500,lost,2026-08-21T15:00:00Z,2026-09-05T23:10:55Z,2026-09-05T23:10:55Z,budget
+D0302,Silver Health LLC,Sam,Website,website,21500,qualified,2026-08-21T16:00:00Z,2026-08-28T19:05:33Z,,
+D0303,Atlas Studio,Maya,Website,referral,14500,lead,2026-08-22T11:00:00Z,2026-08-22T11:00:00Z,,
+D0304,Coastal Apparel,Priya,Content,referral,3000,lead,2026-08-23T09:00:00Z,2026-08-23T09:00:00Z,,
+D0305,Cedar Logistics,Sam,Paid ads,referral,7000,proposal,2026-08-24T08:00:00Z,2026-09-21T08:53:10Z,,
+D0306,Harbor Outdoors LLC,Jordan,SEO retainer,event,11000,qualified,2026-08-24T13:00:00Z,2026-09-18T19:24:46Z,,
+D0307,Coastal Foods Collective,Priya,Website,outbound,12500,lost,2026-08-25T12:00:00Z,2026-09-08T00:31:25Z,2026-09-08T00:31:25Z,budget
+D0308,Pine Realty LLC,Sam,Website,website,9000,lead,2026-08-25T16:00:00Z,2026-08-25T16:00:00Z,,
+D0309,Harbor Clinic Co,Sam,SEO retainer,referral,13500,lost,2026-08-26T10:00:00Z,2026-09-28T19:25:25Z,2026-09-28T19:25:25Z,budget
+D0310,Atlas Apparel Co,Jordan,Paid ads,website,11000,lost,2026-08-28T11:00:00Z,2026-09-13T18:40:13Z,2026-09-13T18:40:13Z,went quiet
+D0311,Bright Law Collective,Sam,Website,outbound,11000,lead,2026-08-30T16:00:00Z,2026-08-30T16:00:00Z,,
+D0312,Atlas Wellness,Maya,Brand identity,referral,27000,qualified,2026-08-31T15:00:00Z,2026-09-23T16:26:46Z,,
+D0313,Silver Coffee,Jordan,Website,outbound,6500,lead,2026-09-01T15:00:00Z,2026-09-01T15:00:00Z,,
+D0314,Summit Outdoors Collective,Maya,Paid ads,outbound,13500,qualified,2026-09-02T10:00:00Z,2026-09-12T10:20:28Z,,
+D0315,Silver Studio Co,Jordan,SEO retainer,referral,18000,lost,2026-09-03T16:00:00Z,2026-09-26T04:31:11Z,2026-09-26T04:31:11Z,budget
+D0316,Copper Apparel Group 315,Sam,SEO retainer,outbound,49000,lost,2026-09-04T08:00:00Z,2026-09-08T15:13:50Z,2026-09-08T15:13:50Z,budget
+D0317,Summit Wellness Collective,Jordan,SEO retainer,website,17000,qualified,2026-09-05T14:00:00Z,2026-09-17T22:39:04Z,,
+D0318,Golden Logistics,Priya,Paid ads,partner,22500,lead,2026-09-07T08:00:00Z,2026-09-07T08:00:00Z,,
+D0319,Summit Coffee Group,Priya,Website,referral,10000,lost,2026-09-09T15:00:00Z,2026-09-19T01:56:14Z,2026-09-19T01:56:14Z,chose competitor
+D0320,Summit Dental,Priya,Content,referral,3000,lead,2026-09-11T13:00:00Z,2026-09-11T13:00:00Z,,
+D0321,Harbor Fitness Group,Priya,SEO retainer,outbound,9500,lead,2026-09-12T13:00:00Z,2026-09-12T13:00:00Z,,
+D0322,Prairie Builders,Sam,Paid ads,website,43500,qualified,2026-09-13T11:00:00Z,2026-09-19T05:18:12Z,,
+D0323,Copper Law,Maya,Paid ads,partner,11000,lost,2026-09-13T16:00:00Z,2026-09-29T12:52:29Z,2026-09-29T12:52:29Z,chose competitor
+D0324,Summit Partners LLC 323,Maya,SEO retainer,partner,22500,proposal,2026-09-14T09:00:00Z,2026-09-27T07:43:12Z,,
+D0325,Lumen Labs Group,Maya,Paid ads,website,13500,lead,2026-09-15T10:00:00Z,2026-09-15T10:00:00Z,,
+D0326,Bright Wellness Group,Maya,SEO retainer,referral,26500,qualified,2026-09-15T11:00:00Z,2026-09-27T11:04:12Z,,
+D0327,Lumen Logistics,Jordan,SEO retainer,website,23000,lead,2026-09-15T16:00:00Z,2026-09-15T16:00:00Z,,
+D0328,Harbor Fitness LLC,Maya,Website,website,10500,qualified,2026-09-16T14:00:00Z,2026-09-24T17:55:31Z,,
+D0329,Harbor Builders,Priya,Brand identity,website,10500,proposal,2026-09-16T14:00:00Z,2026-09-29T07:20:39Z,,
+D0330,Iron Realty,Priya,SEO retainer,website,27000,qualified,2026-09-17T13:00:00Z,2026-09-29T07:54:21Z,,
+D0331,Cedar Health Group,Maya,SEO retainer,referral,19000,lead,2026-09-17T16:00:00Z,2026-09-17T16:00:00Z,,
+D0332,Bright Builders Co,Priya,Paid ads,referral,5500,lead,2026-09-18T09:00:00Z,2026-09-18T09:00:00Z,,
+D0333,Atlas Studio LLC,Maya,SEO retainer,outbound,21500,lead,2026-09-19T13:00:00Z,2026-09-19T13:00:00Z,,
+D0334,Maple Realty Co,Priya,Brand identity,event,14000,lead,2026-09-20T12:00:00Z,2026-09-20T12:00:00Z,,
+D0335,Pine Realty Co,Priya,Website,website,28000,lead,2026-09-20T14:00:00Z,2026-09-20T14:00:00Z,,
+D0336,Summit Coffee Group 336,Priya,Website,referral,21000,lead,2026-09-21T09:00:00Z,2026-09-21T09:00:00Z,,
+D0337,Atlas Health Co,Maya,Website,outbound,15000,lead,2026-09-21T16:00:00Z,2026-09-21T16:00:00Z,,
+D0338,Golden Apparel,Maya,Brand identity,referral,14000,lost,2026-09-22T10:00:00Z,2026-09-30T11:34:47Z,2026-09-30T11:34:47Z,budget
+D0339,Stone Clinic,Maya,Website,website,16500,lead,2026-09-23T11:00:00Z,2026-09-23T11:00:00Z,,
+D0340,Golden Apparel LLC,Maya,Website,referral,17500,lead,2026-09-24T12:00:00Z,2026-09-24T12:00:00Z,,
+D0341,Cedar Dental,Priya,Website,event,10000,lost,2026-09-24T16:00:00Z,2026-09-30T08:56:17Z,2026-09-30T08:56:17Z,budget
+D0342,Stone Motors LLC,Jordan,Brand identity,referral,3000,lead,2026-09-25T14:00:00Z,2026-09-25T14:00:00Z,,
+D0343,Golden Fitness,Maya,SEO retainer,event,23000,lead,2026-09-26T14:00:00Z,2026-09-26T14:00:00Z,,
+D0344,Stone Outdoors Group,Priya,SEO retainer,website,18000,lead,2026-09-26T15:00:00Z,2026-09-26T15:00:00Z,,
+D0345,Bright Dental Group,Jordan,Website,referral,22000,lead,2026-09-27T08:00:00Z,2026-09-27T08:00:00Z,,
+D0346,Prairie Fitness LLC,Maya,Paid ads,website,33000,lead,2026-09-27T14:00:00Z,2026-09-27T14:00:00Z,,
+D0347,Silver Health Co,Maya,Website,outbound,14000,lead,2026-09-28T16:00:00Z,2026-09-28T16:00:00Z,,
+D0348,Silver Coffee Collective,Priya,SEO retainer,website,16000,lead,2026-09-29T11:00:00Z,2026-09-29T11:00:00Z,,
+D0349,Silver Clinic,Priya,Content,partner,9000,lead,2026-09-29T16:00:00Z,2026-09-29T16:00:00Z,,
+D0350,Lumen Health Group 349,Maya,Brand identity,website,10500,lead,2026-09-30T12:00:00Z,2026-09-30T12:00:00Z,,

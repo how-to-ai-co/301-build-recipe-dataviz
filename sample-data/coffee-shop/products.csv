@@ -1,0 +1,19 @@
+product_id,name,category,price
+P01,Drip coffee,Coffee,3.25
+P02,Latte,Coffee,5.25
+P03,Cappuccino,Coffee,4.95
+P04,Oat milk latte,Coffee,5.95
+P05,Cold brew,Cold drinks,5.00
+P06,Iced latte,Cold drinks,5.50
+P07,Iced matcha,Cold drinks,6.00
+P08,Lemonade,Cold drinks,4.25
+P09,Chai latte,Tea,5.00
+P10,Earl grey,Tea,3.50
+P11,Croissant,Bakery,3.95
+P12,Blueberry muffin,Bakery,3.75
+P13,Banana bread,Bakery,4.25
+P14,Breakfast sandwich,Food,8.50
+P15,Avocado toast,Food,9.75
+P16,Grain bowl,Food,12.50
+P17,Whole bean bag,Retail,18.00
+P18,Driftwood mug,Retail,22.00
