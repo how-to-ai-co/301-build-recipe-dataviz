@@ -9,8 +9,8 @@ const tools = [
   { name: "Vercel", logo: "vercel.svg", what: "Puts your dashboard and story live at your own link." },
 ];
 const optional = [
-  { name: "Slack", logo: "slack.svg", what: "Receive the insights in a channel or a direct message." },
-  { name: "Gmail", logo: "gmail.svg", what: "Receive the insights by email, as a draft you send yourself." },
+  { name: "Slack", logo: "slack.svg", what: "Your agent posts its updates to a channel or messages you directly." },
+  { name: "Gmail", logo: "gmail.svg", what: "Your agent emails its updates to you." },
 ];
 const sources = [
   { icon: FileSpreadsheet, name: "A spreadsheet", what: "Excel, Google Sheets or any CSV export." },
@@ -27,7 +27,7 @@ const steps = [
   { t: "Pick the dashboard", d: "Claude studies your data and recommends the headline number, cards and charts that fit it. You approve, then it builds." },
   { t: "Put it live", d: "Your dashboard goes live at your own link on Vercel. Only totals are shown, never personal details." },
   { t: "Tell the story", d: "Claude turns your main finding into a short animated story on the same site." },
-  { t: "Send the insights", d: "A short summary with both links goes to you in Slack or email. You approve it before it sends." },
+  { t: "Hire your analyst agent", d: "Claude writes a short brief for an agent that watches your numbers. It runs on a schedule, sends you what changed in Slack or email, and answers your questions from the Claude app on any device." },
 ];
 const lines = (recipe as string).trimEnd().split("\n").length;
 
@@ -42,8 +42,8 @@ export default function Page() {
 
       <header className="hero">
         <p className="eyebrow accent">Claude Code · Supabase · Vercel</p>
-        <h1>Your data, live.<br />Then a story.</h1>
-        <p className="lead">Connect your data, let Claude pick the dashboard that fits it, put it live at your own link and turn the headline into an animated story. One prompt starts it all.</p>
+        <h1>Your data, live.<br />Your analyst, on staff.</h1>
+        <p className="lead">Connect your data, let Claude pick the dashboard that fits it, put it live at your own link, turn the headline into an animated story, then hand it to an analyst agent that keeps watching. One prompt starts it all.</p>
         <nav aria-label="On this page" className="jump">
           <a href="#how">1. What happens <ArrowDown size={15} aria-hidden="true" /></a>
           <a href="#need">2. What you need <ArrowDown size={15} aria-hidden="true" /></a>
@@ -57,7 +57,7 @@ export default function Page() {
         <ol className="steps">
           {steps.map((s, i) => <li key={s.t} className="card row"><span className="num">{i + 1}</span><div><h3>{s.t}</h3><p>{s.d}</p></div></li>)}
         </ol>
-        <p className="note">You leave with three things: a database Claude can query, a live dashboard and an animated story.</p>
+        <p className="note">You leave with four things: a database Claude can query, a live dashboard, an animated story and an analyst agent that keeps watching for you.</p>
       </section>
 
       <section id="need" className="part">
@@ -65,7 +65,7 @@ export default function Page() {
         <ul className="cards four">
           {tools.map(t => <li key={t.name} className="card"><img src={`logos/${t.logo}`} alt="" width={36} height={36} /><h3>{t.name}</h3><p>{t.what}</p><span className="tag">From AI 201</span></li>)}
         </ul>
-        <p className="sub-label">Optional, for sending the insights</p>
+        <p className="sub-label">For your analyst agent's reports, pick one</p>
         <ul className="cards two">
           {optional.map(t => <li key={t.name} className="card row"><img src={`logos/${t.logo}`} alt="" width={28} height={28} /><div><h3>{t.name}</h3><p>{t.what}</p></div></li>)}
         </ul>
@@ -83,7 +83,7 @@ export default function Page() {
       </section>
 
       <section id="prompt" className="part">
-        <Head n="4" title="The prompt" body="Copy it into a new Claude Code session. Claude asks four short questions, then builds and stops only for sign-ins and approvals." />
+        <Head n="4" title="The prompt" body="Copy it into a new Claude Code session. Claude asks a few short questions, then builds and stops only for sign-ins and approvals." />
         <CopyPrompt text={recipe as string} lines={lines} />
         <p className="note">Something to change later? Open the same folder in Claude Code and ask. Your dashboard keeps its link.</p>
       </section>

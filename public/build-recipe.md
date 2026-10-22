@@ -4,13 +4,13 @@ Build a live dashboard and tell a story with your data.
 
 Copy this whole recipe into Claude Code. Keep this page open while you work.
 
-By the end you will have three things built from your own data: a database Claude can query in plain English, a live dashboard at your own Vercel URL, and an animated data story people will remember. Then Claude sends the key insights to you in Slack or email.
+By the end you will have four things built from your own data: a database Claude can query in plain English, a live dashboard at your own Vercel URL, an animated data story people will remember, and an analyst agent that checks your numbers every day (or as often as you like) and sends you what changed in Slack or email.
 
 ## The job
 
-Act as my analyst on staff. Help me get my data into a database, study it, decide which dashboard and story fit it best, build both, publish them, and send me the insights.
+Act as my analyst on staff. Help me get my data into a database, study it, decide which dashboard and story fit it best, build both, publish them, and then set up an analyst agent that checks the data on a schedule and sends me what changed.
 
-Use the playbook, sample data and reference animation at https://github.com/how-to-ai-co/301-build-recipe-dataviz. Clone it into a scratch folder and read `AGENTS.md`, `playbook/analyst-playbook.md` and `playbook/story-playbook.md` before you start building. Open `examples/sample-story/index.html` in the browser so you know the quality bar for the story. It runs on made-up sample data; never copy its numbers into my story.
+Use the playbook, sample data and reference animation at https://github.com/how-to-ai-co/301-build-recipe-dataviz. Clone it into a scratch folder and read `AGENTS.md`, `playbook/analyst-playbook.md`, `playbook/story-playbook.md` and `playbook/analyst-agent.md` before you start building. Open `examples/sample-story/index.html` in the browser so you know the quality bar for the story. It runs on made-up sample data; never copy its numbers into my story.
 
 ## Work with me
 
@@ -111,14 +111,18 @@ Follow `playbook/story-playbook.md` and use `examples/sample-story/index.html` a
 4. Include a **Play** button that scrolls the story automatically, a "what this does not prove yet" section at the end, and a calm version for people who turn off motion in their device settings.
 5. Make it work on a phone. Deploy it and show me the live `/story` URL.
 
-## Step 9: close the loop and send me the insights
+## Step 9: set up my analyst agent
 
-Ask: **Where do you want your insights? Slack / Email / Both / Just show me here.**
+This closes the loop. The dashboard shows my numbers when I open it; the agent checks them on a schedule and sends me what changed. If I want to ask a question about my data, I just ask Claude in a chat, so the agent's only job is the insight delivery. Follow `playbook/analyst-agent.md`. Use features and connectors my Claude account already has. Do not build a custom bot, server or email service.
 
-1. Use a Slack or Gmail connector that is already available to you. Check first. If it is not connected, tell me where to turn it on in Claude's connector settings and wait. Do not build a custom Slack bot or email service.
-2. Write a short insight digest: the headline, three findings with their numbers, one thing to watch, and links to the dashboard and the story.
-3. Show me the draft first. Send it, or save it as a draft, only after I say so. For Slack, ask which channel or whether to send it to me directly.
-4. If I want this every week, explain the options my Claude plan offers for scheduled tasks, and set one up only if I confirm.
+1. **Pick the cadence.** Ask: **Every morning / Every Monday / Once a month / Something else.** Default to every morning.
+2. **Pick where it reports.** Ask: **Slack / Email / Both.** Check that a Slack or Gmail connector is available. If it is not, tell me where to turn it on and wait. For Slack, ask whether it posts to a channel or sends to me directly. For email, it sends to me only, or saves a draft if sending is not available.
+3. **Write its brief.** Create `analyst/AGENT.md` in my project and push it to GitHub. It holds what the agent watches (the headline number and the KPI cards from my dashboard, with the exact queries), what counts as worth telling me (for example, a move of more than 10% against the previous period, a new high or low, a missing day of data), the message format, where it sends, and the links to my dashboard and story. No secrets in it. Show me the brief in plain words and let me change anything.
+4. **Run it once with me.** Follow the brief now: run the queries, compare with the previous period, write the message (the headline, up to three changes with their numbers, one thing to watch, and both links). Show me the draft and send it only after I approve.
+5. **Put it on the schedule.** Set it up with the scheduled-task feature my Claude plan offers (check what is available, such as routines in Claude Code or scheduled tasks in the Claude app, and do not invent screens). The scheduled task reads `analyst/AGENT.md`, queries Supabase read-only and sends with the Slack or Gmail connector. Trigger one run right away and confirm the message arrived before calling it done.
+6. **Keep the data fresh.** Say plainly how new data reaches Supabase. If my source is a connected tool, the agent can pull the latest records into Supabase before it analyzes, if I approve that write. If my source is a spreadsheet or a paste, tell me how to add the next export and make the agent say "No new data since [date]" instead of repeating old news. Sample data never changes, so for sample data the message says it is sample data.
+
+If my plan has no scheduled tasks, give me a one-line prompt I can paste into Claude at my chosen cadence instead (for example "Run my analyst brief in analyst/AGENT.md and send me the update"), and mark the schedule as waiting.
 
 ## Finish with a handoff
 
@@ -127,7 +131,7 @@ End with:
 - The dashboard URL, the story URL, the GitHub repository and the local project folder.
 - Where the data lives (Supabase project name and tables) and how many rows were loaded.
 - Which numbers come from sample data, if any.
-- Whether the insight message was sent, saved as a draft or skipped.
+- The analyst agent: where it reports, how often, when it runs next, and whether the test run arrived.
 - Three questions I could ask my data next.
 
 Save these non-secret choices to `.analyst/setup.json` in the project (and add `.analyst/` to `.gitignore`), then give me this resume prompt:

@@ -8,7 +8,7 @@ Prerequisite: the AI 201 live workshop (GitHub, Vercel, npm and Supabase set up)
 
 - `public/build-recipe.md`: the prompt students paste into Claude Code. Keep `content/recipe.json` identical (`npm run sync`).
 - `AGENTS.md`: orientation for the agent that clones this repo.
-- `playbook/`: the analyst playbook (how Claude picks the dashboard), the story playbook, data-loading paths and the Supabase MCP guide.
+- `playbook/`: the analyst playbook (how Claude picks the dashboard), the story playbook, the analyst agent playbook (brief, schedule, reports), data-loading paths and the Supabase MCP guide.
 - `examples/sample-story/`: the reference animated story, built on the made-up Brightpath sample data (`python3 scripts/build-sample-story.py` rebuilds it from `examples/story-template.html`).
 - `sample-data/`: three fictional datasets (coffee shop, course launch, agency pipeline) with schemas.
 - `scripts/`: the sample-data generator and the CSV loader.
