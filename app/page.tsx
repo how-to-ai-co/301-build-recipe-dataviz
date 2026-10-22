@@ -9,8 +9,8 @@ const tools = [
   { name: "Vercel", logo: "vercel.svg", what: "Puts your dashboard and story live at your own link." },
 ];
 const optional = [
-  { name: "Slack", logo: "slack.svg", what: "Your agent posts its updates to a channel or messages you directly." },
-  { name: "Gmail", logo: "gmail.svg", what: "Your agent emails its updates to you." },
+  { name: "Slack", logo: "slack.svg", what: "Your agent posts its insights to a channel or messages you directly." },
+  { name: "Gmail", logo: "gmail.svg", what: "Your agent emails its insights to you." },
 ];
 const sources = [
   { icon: FileSpreadsheet, name: "A spreadsheet", what: "Excel, Google Sheets or any CSV export." },
@@ -27,7 +27,7 @@ const steps = [
   { t: "Pick the dashboard", d: "Claude studies your data and recommends the headline number, cards and charts that fit it. You approve, then it builds." },
   { t: "Put it live", d: "Your dashboard goes live at your own link on Vercel. Only totals are shown, never personal details." },
   { t: "Tell the story", d: "Claude turns your main finding into a short animated story on the same site." },
-  { t: "Hire your analyst agent", d: "Claude writes a short brief for an agent that watches your numbers. It runs on a schedule, sends you what changed in Slack or email, and answers your questions from the Claude app on any device." },
+  { t: "Set up your analyst agent", d: "An agent checks your numbers every morning, or as often as you choose, and sends you what changed in Slack or email. You approve the first message before it runs on its own." },
 ];
 const lines = (recipe as string).trimEnd().split("\n").length;
 
@@ -43,7 +43,7 @@ export default function Page() {
       <header className="hero">
         <p className="eyebrow accent">Claude Code · Supabase · Vercel</p>
         <h1>Your data, live.<br />Your analyst, on staff.</h1>
-        <p className="lead">Connect your data, let Claude pick the dashboard that fits it, put it live at your own link, turn the headline into an animated story, then hand it to an analyst agent that keeps watching. One prompt starts it all.</p>
+        <p className="lead">Connect your data, let Claude pick the dashboard that fits it, put it live at your own link, turn the headline into an animated story, then an analyst agent sends you what changed, every day. One prompt starts it all.</p>
         <nav aria-label="On this page" className="jump">
           <a href="#how">1. What happens <ArrowDown size={15} aria-hidden="true" /></a>
           <a href="#need">2. What you need <ArrowDown size={15} aria-hidden="true" /></a>
@@ -57,7 +57,7 @@ export default function Page() {
         <ol className="steps">
           {steps.map((s, i) => <li key={s.t} className="card row"><span className="num">{i + 1}</span><div><h3>{s.t}</h3><p>{s.d}</p></div></li>)}
         </ol>
-        <p className="note">You leave with four things: a database Claude can query, a live dashboard, an animated story and an analyst agent that keeps watching for you.</p>
+        <p className="note">You leave with four things: a database you can ask Claude about in any chat, a live dashboard, an animated story and an analyst agent that sends you the insights on schedule.</p>
       </section>
 
       <section id="need" className="part">
@@ -65,7 +65,7 @@ export default function Page() {
         <ul className="cards four">
           {tools.map(t => <li key={t.name} className="card"><img src={`logos/${t.logo}`} alt="" width={36} height={36} /><h3>{t.name}</h3><p>{t.what}</p><span className="tag">From AI 201</span></li>)}
         </ul>
-        <p className="sub-label">For your analyst agent's reports, pick one</p>
+        <p className="sub-label">Where your analyst agent reports, pick one</p>
         <ul className="cards two">
           {optional.map(t => <li key={t.name} className="card row"><img src={`logos/${t.logo}`} alt="" width={28} height={28} /><div><h3>{t.name}</h3><p>{t.what}</p></div></li>)}
         </ul>

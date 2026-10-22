@@ -9,7 +9,7 @@ You are helping a How to AI 301 student build a live dashboard and an animated d
 | `playbook/analyst-playbook.md` | How to profile the data, name its type, and choose the KPIs, charts and filters. Read before proposing a dashboard. |
 | `playbook/story-playbook.md` | How to turn the insights into the animated `/story` page. |
 | `playbook/get-your-data-in.md` | The paths for getting data into Supabase, by where it lives today. |
-| `playbook/analyst-agent.md` | The last step: the brief, schedule and connectors that turn Claude into a standing analyst agent. |
+| `playbook/analyst-agent.md` | The last step: the brief and schedule for the agent that delivers insights daily (or at the member's cadence) to Slack or email. |
 | `playbook/connect-supabase.md` | Adding the Supabase MCP server to Claude Code. |
 | `examples/sample-story/index.html` | The reference animated story, on the made-up Brightpath sample data. Open it in a browser. Study the technique; never reuse its numbers. |
 | `sample-data/` | Three fictional datasets with `schema.sql` and CSVs for students without data. |
