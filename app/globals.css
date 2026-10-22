@@ -38,20 +38,9 @@ ul, ol { list-style: none; margin: 0; padding: 0 }
 .head h2 { font: 700 clamp(30px, 4vw, 40px)/1.15 var(--serif); margin-top: 6px }
 .head-body { max-width: 40rem; margin-top: 10px; color: var(--muted); font-size: 17px }
 
-/* explainer */
-.explainer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 48px; margin-top: 36px; align-items: start }
-.stage-wrap { grid-column: 2; grid-row: 1; position: sticky; top: 24px; height: min(76vh, 600px) }
-.stage { position: relative; height: 100%; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden }
-.stage canvas { position: absolute; inset: 0; width: 100%; height: 100% }
-.ex-steps { grid-column: 1; grid-row: 1; padding: 6vh 0 18vh }
-.ex-steps li { display: flex; gap: 16px; min-height: 52vh; padding-top: 4px; opacity: .38; transition: opacity .35s }
-.ex-steps li.on { opacity: 1 }
-.ex-steps li:last-child { min-height: 30vh }
-.ex-n { flex: none; width: 30px; height: 30px; border-radius: var(--r); background: var(--soft); color: var(--muted); display: grid; place-items: center; font: 600 14px var(--ui); transition: background .35s, color .35s }
-.ex-steps li.on .ex-n { background: var(--accent); color: #fff }
-.ex-k { font: 600 12px var(--ui); letter-spacing: .07em; text-transform: uppercase; color: var(--accent-ink) }
-.ex-steps h3 { font: 700 24px/1.25 var(--serif); margin-top: 4px }
-.ex-steps h3 + p { color: var(--muted); margin-top: 8px; max-width: 26rem }
+/* steps */
+.steps { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 28px; max-width: 46rem }
+.num { flex: none; width: 32px; height: 32px; border-radius: var(--r); background: var(--accent-tint); color: var(--accent-ink); display: grid; place-items: center; font: 600 15px var(--ui) }
 
 /* cards */
 .cards { display: grid; gap: 14px; margin-top: 28px }
@@ -90,12 +79,9 @@ ul, ol { list-style: none; margin: 0; padding: 0 }
 .foot { border-top: 1px solid var(--line); padding: 22px; text-align: center; font-size: 12.5px; color: var(--muted) }
 
 @media (max-width: 860px) {
-  .explainer { display: block; margin-top: 24px }
-  .stage-wrap { position: sticky; top: 0; height: 50vh; z-index: 2; padding: 10px 0; background: var(--bg) }
-  .ex-steps { padding: 4vh 0 6vh }
-  .ex-steps li { min-height: 46vh; opacity: .45 }
+  .steps { grid-template-columns: 1fr }
   .cards.four { grid-template-columns: repeat(2, minmax(0, 1fr)) }
   .cards.three, .cards.two { grid-template-columns: 1fr }
 }
 @media (max-width: 480px) { .cards.four { grid-template-columns: 1fr } .hero { padding-top: 40px } .prompt-actions, .prompt-actions .btn { width: 100%; justify-content: center } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .ex-steps li, .ex-n { transition: none } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }

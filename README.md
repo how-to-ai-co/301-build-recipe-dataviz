@@ -12,7 +12,7 @@ Prerequisite: the AI 201 live workshop (GitHub, Vercel, npm and Supabase set up)
 - `examples/sample-story/`: the reference animated story, built on the made-up Brightpath sample data (`python3 scripts/build-sample-story.py` rebuilds it from `examples/story-template.html`).
 - `sample-data/`: three fictional datasets (coffee shop, course launch, agency pipeline) with schemas.
 - `scripts/`: the sample-data generator and the CSV loader.
-- `app/`: the handout page (Next.js), deployed to Vercel. `app/explainer.tsx` is the scroll animation; its numbers come from the coffee-shop sample data.
+- `app/`: the handout page (Next.js), deployed to Vercel.
 
 ## Handout site
 

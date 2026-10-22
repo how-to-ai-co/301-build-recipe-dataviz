@@ -1,7 +1,6 @@
 import { ArrowDown, ArrowUpRight, ClipboardPaste, Database, FileSpreadsheet, Plug, Server, Sparkles } from "lucide-react";
 import recipe from "@/content/recipe.json";
 import { CopyPrompt } from "./copy-prompt";
-import { Explainer } from "./explainer";
 
 const tools = [
   { name: "Claude Code", logo: "claude.svg", what: "Does the work: loads your data, studies it, builds the dashboard and the story." },
@@ -20,6 +19,15 @@ const sources = [
   { icon: Plug, name: "A business tool", what: "Stripe, Shopify, HubSpot. Through a connector or the tool's export." },
   { icon: ClipboardPaste, name: "Paste it in", what: "A table straight into the chat, up to a few hundred rows." },
   { icon: Sparkles, name: "Sample data", what: "A coffee shop, a course launch or an agency pipeline." },
+];
+const steps = [
+  { t: "Find your data", d: "Claude asks where your numbers live: a spreadsheet, a database, a business tool or a paste. No data? Pick a sample business." },
+  { t: "Load it into Supabase", d: "Claude puts your data in a private database it can read, so you can ask questions about it in plain English." },
+  { t: "Ask it questions", d: "Claude answers three questions about your data and shows the query behind each number." },
+  { t: "Pick the dashboard", d: "Claude studies your data and recommends the headline number, cards and charts that fit it. You approve, then it builds." },
+  { t: "Put it live", d: "Your dashboard goes live at your own link on Vercel. Only totals are shown, never personal details." },
+  { t: "Tell the story", d: "Claude turns your main finding into a short animated story on the same site." },
+  { t: "Send the insights", d: "A short summary with both links goes to you in Slack or email. You approve it before it sends." },
 ];
 const lines = (recipe as string).trimEnd().split("\n").length;
 
@@ -45,8 +53,11 @@ export default function Page() {
       </header>
 
       <section id="how" className="part">
-        <Head n="1" title="What happens" body="Scroll through the build. Each dot is a bundle of orders from a made-up coffee shop, and they follow your data from a spreadsheet to the message in your inbox." />
-        <Explainer />
+        <Head n="1" title="What happens" body="You paste one prompt. Claude asks a few questions, then works through these steps and stops only for sign-ins and approvals." />
+        <ol className="steps">
+          {steps.map((s, i) => <li key={s.t} className="card row"><span className="num">{i + 1}</span><div><h3>{s.t}</h3><p>{s.d}</p></div></li>)}
+        </ol>
+        <p className="note">You leave with three things: a database Claude can query, a live dashboard and an animated story.</p>
       </section>
 
       <section id="need" className="part">
