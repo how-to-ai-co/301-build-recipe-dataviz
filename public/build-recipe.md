@@ -50,7 +50,7 @@ Check these quietly and stop me only for what is missing, so all the account scr
 1. `git`, Node.js 22+ and `npm`. Clone the workshop repo.
 2. I am signed in to GitHub (`gh auth status`), and you can create a repository in my account.
 3. The Vercel CLI is installed and signed in (`vercel whoami`). If it is missing, install it with `npm i -g vercel` and walk me through `vercel login`.
-4. Create my project folder, a new GitHub repository and a new Vercel project linked to it, with a placeholder page deployed, so every later push goes live on its own. Check that Vercel's GitHub app can see the repository; if `vercel git connect` fails, send me to the GitHub screen that gives Vercel access to it.
+4. Create my project folder, a new **private** GitHub repository and a new Vercel project linked to it, with a placeholder page deployed, so every later push goes live on its own. Check that Vercel's GitHub app can see the repository; if `vercel git connect` fails, send me to the GitHub screen that gives Vercel access to it.
 5. **Only if I chose a database:** add Neon to my Vercel project (the project's Storage tab, or `vercel integration add neon`; I accept Neon's terms myself), then run `vercel env pull .env.local` so the connection string arrives without anyone pasting it.
 6. **Only if my data is in Supabase:** check the Supabase MCP server is connected (see `playbook/connect-supabase.md`).
 7. **Only if I want the agent:** check the Slack or Gmail connector is on, following `playbook/connect-slack-gmail.md`, and send me one test message to confirm it works.
@@ -99,7 +99,7 @@ The dashboard, the story and the agent brief all read from `queries/`, so they d
 **The dashboard**
 
 1. Next.js with TypeScript and Tailwind. Design it freely to fit this data. Follow the chart rules in the playbook: lines for trends, sorted bars for comparisons, histograms for spread, funnels for steps, no pie charts with more than four slices, readable labels, works on a phone.
-2. Data stays on the server. With a database, the server runs the `queries/` files over the connection string. With local files, run the queries with `scripts/query.mjs --json` and save only the results (totals and groups) for the site; the raw CSVs never leave my computer. Add an `npm run refresh` that redoes this.
+2. Data stays on the server. With a database, the server runs the `queries/` files over the connection string. With local files, run the queries with `scripts/query.mjs --json` and save only the results the dashboard needs, outside `public/` and never imported into browser code; the raw CSVs never leave my computer. Add an `npm run refresh` that redoes this.
 3. Filters (date range plus the one or two categories that matter) update every card and chart together.
 4. **If the dashboard is private:** add a simple password page. The password is a Vercel environment variable I set, never in the code, and it is checked on the server before any data is sent to the browser. Private dashboards can show names and details. **If it is public:** totals and groups only.
 5. Show the date range and "last updated" time, and a **Sample data** badge if it applies. Use my brand colors if I gave you my website.
