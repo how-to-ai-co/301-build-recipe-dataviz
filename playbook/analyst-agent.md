@@ -95,7 +95,7 @@ Fallback when no scheduled tasks exist: give the member a one-line prompt to pas
 
 | Source | How new data arrives |
 | --- | --- |
-| A connected tool (Stripe, Shopify, HubSpot) | The scheduled run pulls the newest records before it analyzes (into `data/` or the database). This writes data, so the member approves it once and the brief says so. |
+| A connected tool (Stripe, Shopify, HubSpot) | The scheduled run reads the latest records straight through the tool's connector. If the member also wants the dashboard refreshed, it pulls a new snapshot into `data/` and pushes; that writes, so the member approves it once and the brief says so. |
 | A spreadsheet or export | The member drops the next export into `data/` (or asks Claude to load it into the database). |
 | Pasted data | Same as a spreadsheet. |
 | Sample data | Never changes. The message says it is sample data. |

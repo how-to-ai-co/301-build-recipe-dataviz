@@ -62,11 +62,12 @@ Never copy a database you already have into a new one just for this workshop. Ne
 
 ## A business tool (Stripe, Shopify, HubSpot, Square, Google Analytics…)
 
-1. Claude checks whether a connector for that tool is already available in this session. If it is, Claude uses it to pull the records you need and saves them to CSV.
-2. If not, use the tool's own export screen to download a CSV of the records (orders, payments, contacts, deals). Claude tells you where that screen is.
-3. Continue as "kept on your computer", or load it into Neon.
+Use the tool's connector directly. Do not export it and do not put it in a database.
 
-Data from a tool keeps changing, so this is a good case for a database: the agent can pull new records on schedule, with your approval.
+1. Claude checks the connector for that tool is available in this session. If it is not, Claude tells you where to turn it on (Claude's Settings > Connectors) and waits.
+2. **Chatting and the agent** read straight through the connector, so they always see the latest records.
+3. **The dashboard** is a website, and a website cannot use Claude's connector. Claude pulls a snapshot of the records it needs through the connector into `data/`, and the dashboard is built from that. Refreshing it means asking Claude to pull again (`npm run refresh`), which the agent can also do on its run.
+4. Only if no connector exists for the tool, use its own CSV export screen and continue as "kept on your computer".
 
 No custom API integrations during the workshop. They are a good follow-up project.
 

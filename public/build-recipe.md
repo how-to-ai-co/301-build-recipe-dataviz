@@ -34,7 +34,7 @@ Ask these together, in one or two screens, so the rest of the build can run with
    - D. Inside a business tool (Stripe, Shopify, HubSpot, Square, Google Analytics and so on)
    - E. I will paste it in right here
    - F. I don't have data handy. Use sample data
-3. **If A, D, E or F: keep it on your computer, or put it in a database?**
+3. **If A, E or F: keep it on your computer, or put it in a database?**
    - Keep it on my computer (fastest). Claude queries the files directly. I refresh it by adding a new export.
    - Put it in a database. A few more minutes now; then the dashboard reads live data and the agent can run while my laptop is off. Use Neon, created from my Vercel project, unless I already use Supabase.
 4. **Who should see the dashboard?**
@@ -65,10 +65,10 @@ Report what passed in one short list, then move on.
 
 Follow the matching path in `playbook/get-your-data-in.md`. In short:
 
-- **Kept on my computer (A, D, E, F):** put the CSV files in `data/` (never pushed to GitHub). Tidy them: one header row, no total rows, one date format, money without symbols. There is nothing to load: `scripts/query.mjs` runs SQL straight against the files.
+- **Kept on my computer (A, E, F):** put the CSV files in `data/` (never pushed to GitHub). Tidy them: one header row, no total rows, one date format, money without symbols. There is nothing to load: `scripts/query.mjs` runs SQL straight against the files.
 - **Put in Neon:** create the tables (decide what one row means and pick sensible column types), load them with `scripts/load-csv.mjs`, and check the row counts.
 - **Already in Supabase or another database (B, C):** read it where it is, read-only. Do not copy it anywhere. Confirm with me which tables matter. Never open tables that look like secrets, tokens or logs.
-- **A business tool (D):** use its connector if one is available to you, otherwise walk me through its CSV export screen. No custom API code.
+- **A business tool (D):** use its connector directly. Chat and the agent read through the connector; for the dashboard, pull a snapshot through it into `data/` (the live site cannot use Claude's connector), and refreshing means pulling again. No database, no export screens. Only if no connector exists, walk me through the tool's CSV export. No custom API code.
 - **Sample data (F):** ask which business is closest to mine (coffee shop, course launch, agency pipeline) and copy it from `sample-data/`. Label it **Sample data** everywhere.
 
 If there are several sources (for example ad spend and sales), do not make me pick one table. Offer the questions they could answer, including ones that combine sources ("Are my ads driving sales?"), with a plain time estimate for each.

@@ -42,6 +42,23 @@ ul, ol { list-style: none; margin: 0; padding: 0 }
 .steps { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 28px; max-width: 46rem }
 .num { flex: none; width: 32px; height: 32px; border-radius: var(--r); background: var(--accent-tint); color: var(--accent-ink); display: grid; place-items: center; font: 600 15px var(--ui) }
 
+/* what you get */
+.blocks { display: grid; gap: 14px; margin-top: 28px }
+.block { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px 30px; display: flex; gap: 26px; align-items: flex-start }
+.big-num { flex: none; font: 700 56px/0.9 var(--serif); color: var(--accent); min-width: 44px }
+.block-body { flex: 1; min-width: 0 }
+.block h3 { font: 700 clamp(24px, 3vw, 30px)/1.2 var(--serif) }
+.block-body > p { margin-top: 8px; font: 400 18px/1.55 var(--read); color: var(--text); max-width: 40rem }
+.stores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px }
+.stores li { border: 1px solid var(--line); border-radius: var(--r); background: var(--bg); padding: 20px; display: flex; flex-direction: column; gap: 8px }
+.stores img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 6px }
+.stores b { font: 700 20px/1.25 var(--serif); color: var(--ink) }
+.stores span:not(.tag) { font-size: 14.5px; color: var(--muted) }
+.block-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px !important; font: 400 15px var(--ui) !important; color: var(--muted) !important }
+.mini-logos { display: inline-flex; gap: 8px }
+.block-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font: 600 15px var(--ui); color: var(--accent-ink); border-bottom: 1px solid #f4b48f; padding-bottom: 2px }
+.block-link:hover { border-color: var(--accent) }
+
 /* cards */
 .cards { display: grid; gap: 14px; margin-top: 28px }
 .cards.four { grid-template-columns: repeat(4, minmax(0, 1fr)) }
@@ -82,6 +99,9 @@ ul, ol { list-style: none; margin: 0; padding: 0 }
   .steps { grid-template-columns: 1fr }
   .cards.four { grid-template-columns: repeat(2, minmax(0, 1fr)) }
   .cards.three, .cards.two { grid-template-columns: 1fr }
+  .stores { grid-template-columns: 1fr }
+  .block { flex-direction: column; gap: 10px; padding: 22px 20px }
+  .big-num { font-size: 44px }
 }
 @media (max-width: 480px) { .cards.four { grid-template-columns: 1fr } .hero { padding-top: 40px } .prompt-actions, .prompt-actions .btn { width: 100%; justify-content: center } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
