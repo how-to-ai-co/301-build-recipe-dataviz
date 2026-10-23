@@ -15,6 +15,8 @@ Use the playbooks, scripts, sample data and reference story at https://github.co
 ## Work with me
 
 - Run commands, edit files and check results yourself. Show me the browser as things change.
+- Give every URL as a clickable link, never inside code formatting. When I need to see a page (my site, a settings screen), open it for me in the browser too.
+- Change Vercel settings yourself with the Vercel CLI. Send me to the Vercel website only when the CLI cannot do it.
 - Ask all your questions in Step 1, using clickable options if you have them, otherwise lettered choices. After that, only stop for account screens I have to click through myself, approvals, or anything that costs money.
 - Taking time to analyze well is fine. Working in silence is not. While you work, tell me what you are finding in one short line at a time.
 - Never ask me to paste passwords, API keys or database connection strings into chat. Never print them, commit them or put them in browser code. Tell me exactly where to paste each secret privately (an `.env.local` file you create for me, or the Vercel environment-variables screen).
@@ -39,7 +41,8 @@ Ask these together, in one or two screens, so the rest of the build can run with
    - Just me and my team. It gets a password and can show names and details.
    - Anyone with the link. Totals and groups only, no personal details.
 5. **If you want the agent:** how often (every morning / every Monday / once a month / something else), where (Slack / email / both), and who gets it (just me / other people too). If other people, have me type their email addresses or name the Slack channel.
-6. **Optional:** your website, if you want the dashboard in your brand colors.
+6. **Where should the project live?** Default: a new folder in my home directory, named after the project. Never a temporary or scratch folder: the analyst agent runs from it later.
+7. **Optional:** your website, if you want the dashboard in your brand colors.
 
 Save the answers (no secrets) to `.analyst/setup.json` in the project and add `.analyst/` to `.gitignore`.
 
@@ -50,10 +53,11 @@ Check these quietly and stop me only for what is missing, so all the account scr
 1. `git`, Node.js 22+ and `npm`. Clone the workshop repo.
 2. I am signed in to GitHub (`gh auth status`), and you can create a repository in my account.
 3. The Vercel CLI is installed and signed in (`vercel whoami`). If it is missing, install it with `npm i -g vercel` and walk me through `vercel login`.
-4. Create my project folder, a new **private** GitHub repository and a new Vercel project linked to it, with a placeholder page deployed, so every later push goes live on its own. Check that Vercel's GitHub app can see the repository; if `vercel git connect` fails, send me to the GitHub screen that gives Vercel access to it.
-5. **Only if I chose a database:** add Neon to my Vercel project (the project's Storage tab, or `vercel integration add neon`; I accept Neon's terms myself), then run `vercel env pull .env.local` so the connection string arrives without anyone pasting it.
-6. **Only if my data is in Supabase:** check the Supabase MCP server is connected (see `playbook/connect-supabase.md`).
-7. **Only if I want the agent:** check the Slack or Gmail connector is on, following `playbook/connect-slack-gmail.md`, and send me one test message to confirm it works.
+4. Create my project folder where I chose in Step 1, a new **private** GitHub repository and a new Vercel project linked to it, with a placeholder page deployed, so every later push goes live on its own. Check that Vercel's GitHub app can see the repository; if `vercel git connect` fails, send me to the GitHub screen that gives Vercel access to it.
+5. **Only if the dashboard is private:** generate a strong password, set it as `DASHBOARD_PASSWORD` in the Vercel project with the CLI and in `.env.local`, and tell me it once. It is meant to be shared with my team, so showing it to me is fine; never put it in code or commit it.
+6. **Only if I chose a database:** add Neon to my Vercel project (the project's Storage tab, or `vercel integration add neon`; I accept Neon's terms myself), then run `vercel env pull .env.local` so the connection string arrives without anyone pasting it.
+7. **Only if my data is in Supabase:** check the Supabase MCP server is connected (see `playbook/connect-supabase.md`).
+8. **Only if I want the agent:** check the Slack or Gmail connector is on, following `playbook/connect-slack-gmail.md`, and send me one test message to confirm it works.
 
 Report what passed in one short list, then move on.
 
@@ -94,29 +98,31 @@ Every number must come from a query. Never invent, round up or estimate a number
 
 ## Step 6: build what I chose, in parallel
 
-The dashboard, the story and the agent brief all read from `queries/`, so they do not depend on each other. If you can run helper agents or parallel sessions, build them at the same time; otherwise build the dashboard first. Tell me what each one is doing.
+The dashboard, the story and the agent brief all read from `queries/`, so they do not depend on each other. If you can run helper agents or parallel sessions, build them at the same time; otherwise build the dashboard first. Have each helper report a one-line progress update every few minutes, and pass those on to me. Do not deploy anything during this step.
 
 **The dashboard**
 
 1. Next.js with TypeScript and Tailwind. Design it freely to fit this data. Follow the chart rules in the playbook: lines for trends, sorted bars for comparisons, histograms for spread, funnels for steps, no pie charts with more than four slices, readable labels, works on a phone.
 2. Data stays on the server. With a database, the server runs the `queries/` files over the connection string. With local files, run the queries with `scripts/query.mjs --json` and save only the results the dashboard needs, outside `public/` and never imported into browser code; the raw CSVs never leave my computer. Add an `npm run refresh` that redoes this.
 3. Filters (date range plus the one or two categories that matter) update every card and chart together.
-4. **If the dashboard is private:** add a simple password page. The password is a Vercel environment variable I set, never in the code, and it is checked on the server before any data is sent to the browser. Private dashboards can show names and details. **If it is public:** totals and groups only.
-5. Show the date range and "last updated" time, and a **Sample data** badge if it applies. Use my brand colors if I gave you my website.
+4. **If the dashboard is private:** add a simple password page using the `DASHBOARD_PASSWORD` from Step 2, never in the code, and it is checked on the server before any data is sent to the browser. Private dashboards can show names and details. **If it is public:** totals and groups only.
+5. Show the date range and "last updated" time, and a **Sample data** badge if it applies. Use my brand colors if I gave you my website. If I chose a story, put a clear link to it on the dashboard.
 6. Run it locally and check desktop and phone widths before showing me.
 
-**The story** (if I chose it). Follow `playbook/story-playbook.md`. Run wild with animation and sound, at the highest fidelity you can, with a visual idea that fits this data and this headline. The sample story is the quality bar to beat, not a template. Keep these: beats built from the Step 5 insights, every number computed from the data, a **Play** button, sound off until I click, a "what this does not prove yet" ending, a calm version for people who turn off motion, works on a phone, and no personal details. It lives at `/story` on the same site and stays public even when the dashboard is private.
+**The story** (if I chose it). Follow `playbook/story-playbook.md`. Run wild with animation and sound, at the highest fidelity you can, with a visual idea that fits this data and this headline. The sample story is the quality bar to beat, not a template. Keep these: beats built from the Step 5 insights, every number computed from the data, a **Play** button, sound off until I click, a "what this does not prove yet" ending, a calm version for people who turn off motion, works on a phone, and no personal details. It lives at `/story` on the same site and stays public even when the dashboard is private. Aim for about 10 minutes: ship a strong first version, and I can ask for more polish later.
 
 **The agent brief** (if I chose the agent). Write `analyst/AGENT.md` following `playbook/analyst-agent.md`. It points at the `queries/` files instead of copying them.
 
 ## Step 7: put it live
 
-1. Push to GitHub (never `.env.local`, `data/` or `.analyst/`). The Vercel project from Step 2 deploys it.
-2. If the dashboard reads a database, check the connection string is in the Vercel project's environment variables (Neon puts it there for you; for Supabase, walk me through pasting it into the Vercel screen). If it is private, have me set the password there too.
-3. Open the real URL and confirm the numbers match the local version. If it is private, confirm the password page works and nothing loads before it.
+Deploy once, when everything I chose is built and checked. The placeholder from Step 2 does not count.
+
+1. Check every setting the site needs is in the Vercel project before deploying: the connection string if it reads a database (Neon puts it there for you; for Supabase, walk me through pasting it into the Vercel screen) and `DASHBOARD_PASSWORD` if it is private. If you change a setting after a deploy, redeploy, because settings only apply to new deploys.
+2. Push to GitHub (never `.env.local`, `data/` or `.analyst/`). The Vercel project from Step 2 deploys it.
+3. Open the real URL and confirm the numbers match the local version, the story loads, and, if it is private, the password page works and nothing loads before it.
 4. If I kept my data on my computer, tell me plainly how to update it: add the new export to `data/`, then ask you to refresh and push.
 
-Show me the live dashboard and `/story` URLs.
+Then give me the one link to my site and open it for me. The dashboard links to the story.
 
 ## Step 8: start my analyst agent
 
@@ -133,7 +139,7 @@ If my plan has no scheduled tasks, give me a one-line prompt I can paste into Cl
 
 End with:
 
-- The dashboard URL (and whether it has a password), the story URL, the GitHub repository and the local project folder.
+- The link to my site (and whether the dashboard has a password; the story is at `/story` and can be shared on its own), the GitHub repository and the local project folder.
 - Where the data lives and how many rows there are, and how to refresh it.
 - Which numbers come from sample data, if any.
 - The analyst agent: who it sends to, how often, when it runs next, and whether the test run arrived.

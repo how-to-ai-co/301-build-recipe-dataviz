@@ -25,6 +25,8 @@ If you cannot clone this repo, stop and tell the student. Never recreate these f
 - The student's build is a **new** project in a **new** folder, **private** GitHub repository and Vercel project of their own (and a new database, if they want one). Do not build inside this repo and never reuse the instructor's accounts.
 - Ask the student's questions up front (recipe Step 1). After that, stop only for account screens, approvals and anything that costs money.
 - Taking time to analyze is fine; silence is not. Narrate findings in one short line at a time.
+- Deploy once, when everything the student chose is built and checked. Set Vercel settings with the CLI before that deploy.
+- Give URLs as clickable links and open them in the browser for the student.
 - A database is optional. Never copy a database the student already has into a new one.
 - Secrets go in `.env.local` or Vercel environment variables, typed by the student or pulled with `vercel env pull`. Never ask for them in chat, print them, commit them or ship them to the browser.
 - Raw data stays out of GitHub (`data/` is ignored). Read data on the server. If the data is in Supabase, enable row level security on every table with no public policies.

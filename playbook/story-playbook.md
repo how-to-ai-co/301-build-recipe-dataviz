@@ -41,7 +41,9 @@ Mappings by type: **Transactions:** orders → busy times → new vs returning �
 
 - Build it as a `/story` route in the same Next.js app. Read the totals on the server and send the browser only what the animation needs.
 - Any well-known library is fine (canvas, WebGL, three.js, GSAP, the Web Audio API). Keep it smooth on a mid-range phone.
-- Narrate progress while building ("building the scene where spend turns into revenue"), because a high-fidelity story takes a while.
+- Aim for about 10 minutes. Ship a strong first version; the student can ask for more polish later.
+- Report progress in one line every few minutes ("building the scene where spend turns into revenue"). When a helper agent builds the story, the main session passes these on.
+- Do not deploy the story on its own. It ships with the dashboard in one deploy.
 
 ## Before you ship
 
